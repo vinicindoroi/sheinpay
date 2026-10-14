@@ -4,15 +4,15 @@ import { useEffect } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Facebook Rewards" },
+      { title: "SHEIN VIP — Product Evaluator" },
       {
         name: "description",
-        content: "Programa de recompensas: participe e resgate seu prêmio em poucos minutos.",
+        content: "SHEIN VIP Reviewer Program: evaluate trending fashion items and earn daily cash rewards.",
       },
-      { property: "og:title", content: "Facebook Rewards" },
+      { property: "og:title", content: "SHEIN VIP — Product Evaluator" },
       {
         property: "og:description",
-        content: "Programa de recompensas: participe e resgate seu prêmio em poucos minutos.",
+        content: "SHEIN VIP Reviewer Program: evaluate trending fashion items and earn daily cash rewards.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

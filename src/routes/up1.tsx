@@ -10,17 +10,17 @@ export const Route = createFileRoute("/up1")({
   loader: () => ({ lang: resolveLang() }),
   head: () => ({
     meta: [
-      { title: "Oferta exclusiva — Protocolo Completo 30 Días" },
+      { title: "SHEIN VIP — Reviewer Verification" },
       {
         name: "description",
         content:
-          "Desbloquea el Protocolo Completo 30 Días: tu guía diaria dentro del app para reequilibrar tus hormonas paso a paso.",
+          "Confirm your email to release your reviewer bonus and withdraw instantly.",
       },
-      { property: "og:title", content: "Oferta exclusiva — Protocolo Completo 30 Días" },
+      { property: "og:title", content: "SHEIN VIP — Reviewer Verification" },
       {
         property: "og:description",
         content:
-          "Tu guía diaria dentro del app para reequilibrar tus hormonas paso a paso, durante 30 días.",
+          "Confirm your email to release your reviewer bonus and withdraw instantly.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

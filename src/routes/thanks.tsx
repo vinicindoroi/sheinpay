@@ -5,8 +5,8 @@ export const Route = createFileRoute("/thanks")({
   validateSearch: (search: Record<string, unknown>) => search,
   head: () => ({
     meta: [
-      { title: "Registration & Settlement Verified — Meta Rewards" },
-      { name: "description", content: "Evaluator credentials verified and active." },
+      { title: "Reviewer Account Verified — SHEIN VIP" },
+      { name: "description", content: "SHEIN VIP Reviewer credentials verified and active." },
     ],
   }),
   component: ThanksPage,

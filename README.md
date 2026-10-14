@@ -1,7 +1,6 @@
-# sheinpay
+# SHEIN VIP — Product Evaluator Program (sheinpay)
 
-clone deste projeto:
-415e8b46-0c1c-4578-8ada-6e419a40cb40
+A high-converting product evaluation platform simulation for SHEIN VIP reviewers, featuring fashion review interactions, dynamic chat evaluation workflows, instant reward receipts, and upsell verification flows.
 
 This project was built with [Lovable](https://lovable.dev).
 

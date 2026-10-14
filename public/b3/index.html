@@ -549,7 +549,9 @@
       justify-content: center;
     }
     .support-vip-badge-avatar img {
-      filter: brightness(0) invert(1);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .support-avatar-online-dot {
       position: absolute;
@@ -714,10 +716,12 @@
     }
     .support-mini-bot {
       background: #111111;
-      border-color: #222222;
+      border-color: #111111;
     }
     .support-mini-bot img {
-      filter: brightness(0) invert(1);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .support-bubble {
       display: inline-block;
@@ -1130,9 +1134,7 @@
             <div class="support-header-left">
               <div class="support-avatar-container">
                 <div class="support-agent-avatar-wrap" id="support-agent-avatar-wrap">
-                  <div class="support-vip-badge-avatar">
-                    <img src="images/shein-icon.svg" width="22" height="22" alt="SHEIN VIP">
-                  </div>
+                  <img class="support-agent-avatar" src="images/shein-icon.svg" alt="SHEIN VIP">
                 </div>
                 <span class="support-avatar-online-dot"></span>
               </div>
@@ -1646,7 +1648,7 @@
     if (currentSupportAgent === "emily") {
       return '<div class="support-avatar-badge-wrap"><img class="support-mini-avatar" src="images/emily-support.webp" alt="Chloe Bennett"></div>';
     }
-    return '<div class="support-avatar-badge-wrap support-mini-bot"><img src="images/shein-icon.svg" width="16" height="16" alt="SHEIN VIP"></div>';
+    return '<div class="support-avatar-badge-wrap support-mini-bot"><img class="support-mini-avatar" src="images/shein-icon.svg" alt="SHEIN VIP"></div>';
   }
 
   function updateSupportAgentCard(agent) {
@@ -1659,7 +1661,7 @@
       nameEl.textContent = "Chloe Bennett";
       roleEl.innerHTML = '<span class="support-status-dot"></span><span>Senior Reviewer Coordinator • Online</span>';
     } else {
-      wrap.innerHTML = '<div class="support-vip-badge-avatar"><img src="images/shein-icon.svg" width="22" height="22" alt="SHEIN VIP"></div>';
+      wrap.innerHTML = '<img class="support-agent-avatar" src="images/shein-icon.svg" alt="SHEIN VIP">';
       nameEl.textContent = "SHEIN VIP Concierge";
       roleEl.innerHTML = '<span class="support-status-dot"></span><span>Reviewer Desk • Active Now</span>';
     }

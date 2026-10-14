@@ -131,11 +131,11 @@
   <style>
     img.emoji { height: 1.1em; width: 1.1em; margin: 0 .05em 0 .05em; vertical-align: -0.15em; display: inline; }
     .step { display: none; }
-    .step.active { display: block; }
     .modal-overlay { display: none; position: fixed; inset: 0; z-index: 100;
       align-items: center; justify-content: center;
-      background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); padding: 1rem; }
-    .modal-overlay.open { display: flex; }
+      background: rgba(0,0,0,0.45); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); padding: 1rem; }
+    .modal-overlay.open { display: flex; animation: fadeInModal .2s ease both; }
+    @keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
 
     @keyframes drawCircle {
       from { stroke-dashoffset: 251; }
@@ -895,29 +895,54 @@
   </div>
 
   <!-- ─────────────────────────────────────────── -->
-  <!-- MODAL: Balance Earned (VIP Luxury Style)     -->
+  <!-- MODAL: Balance Earned (SHEIN Clean Style)    -->
   <!-- ─────────────────────────────────────────── -->
   <div id="modal-balance" class="modal-overlay">
-    <div class="vip-reward-modal rounded-[28px] p-7 w-full max-w-[360px] text-center shadow-2xl relative overflow-hidden appear" style="background:#111827;border:1.5px solid rgba(255,255,255,0.12);box-shadow:0 25px 60px -15px rgba(0,0,0,0.6);">
-      <!-- Glowing checkmark & gold star -->
-      <div class="w-16 h-16 bg-gradient-to-tr from-emerald-500 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl relative" style="background:linear-gradient(135deg, #059669 0%, #10b981 100%);box-shadow:0 8px 24px rgba(16,185,129,0.35);">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <div class="rounded-[24px] p-6 sm:p-7 w-full max-w-[340px] text-center shadow-2xl relative overflow-hidden appear" style="background:#ffffff;border:1px solid #f0f0f2;box-shadow:0 20px 50px -10px rgba(0,0,0,0.18);">
+      
+      <!-- Close button on top right (optional / subtle) -->
+      <button onclick="continueFromBalance()" type="button" aria-label="Close" class="absolute top-4 right-4 text-gray-300 hover:text-gray-500 transition-colors">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Clean Emerald Success Badge -->
+      <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3.5 relative" style="background:#ecfdf5;border:2px solid #a7f3d0;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
       </div>
-      <div style="font-size:11px;font-weight:800;color:#10b981;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Evaluation Verified ✓</div>
-      <h2 class="anim-fade-1 text-[21px] font-black text-white mb-1.5 tracking-tight">Review Registered!</h2>
-      <p class="anim-fade-2 text-gray-400 mb-4 leading-relaxed text-[13.5px]">Your product rating has been recorded and credited to your reviewer balance.</p>
+
+      <div style="font-size:11px;font-weight:800;color:#059669;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3px;">
+        Review Verified ✓
+      </div>
+      <h2 class="text-[20px] font-extrabold text-[#111111] mb-1.5 tracking-tight">
+        Evaluation Completed!
+      </h2>
+      <p class="text-gray-500 mb-4 leading-relaxed text-[13.5px]">
+        Your feedback was recorded and credited to your reviewer account.
+      </p>
       
-      <!-- Amount Badge -->
-      <div style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);border-radius:14px;padding:12px;margin-bottom:18px;">
-        <div style="font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:2px;">Commission Credit Added</div>
-        <div id="earned-amount" class="text-[30px] font-black text-[#10b981] drop-shadow-sm tracking-tight">+$82.06</div>
+      <!-- Commission Amount Pill (Clean, Bright, Legible) -->
+      <div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:14px;padding:12px 14px;margin-bottom:18px;">
+        <div style="font-size:11px;font-weight:700;color:#15803d;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:1px;">
+          Reward Credited
+        </div>
+        <div id="earned-amount" class="text-[28px] font-black text-[#16a34a] tracking-tight leading-none">
+          +$82.06
+        </div>
       </div>
 
-      <div class="anim-fade-4">
-        <button onclick="continueFromBalance()" class="w-full bg-white hover:bg-gray-100 text-[#111827] font-black py-4 rounded-xl text-[14.5px] uppercase tracking-wider transition-all transform active:scale-95 shadow-lg min-h-[52px]">
-          Continue →
+      <!-- High-converting Black SHEIN Button -->
+      <div>
+        <button onclick="continueFromBalance()" type="button" class="w-full bg-[#111111] hover:bg-[#262626] text-white font-extrabold py-3.5 rounded-xl text-[14px] uppercase tracking-wider transition-all transform active:scale-95 shadow-md flex items-center justify-center gap-2 min-h-[48px]">
+          <span>Continue</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
         </button>
       </div>
     </div>

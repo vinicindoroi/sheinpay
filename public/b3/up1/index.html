@@ -503,8 +503,8 @@
   // ==========================================
   const WORKER_URL         = 'https://metapay-v2.vinicio-bdf.workers.dev/api/stripe-charge-upsell';
   const UPSELL_NUMBER      = 1;
-  const URL_DESTINO_RECUSA = '/up2';
-  const URL_OBRIGADO_FINAL = '/up2';
+  const URL_DESTINO_RECUSA = 'https://partner.officialprogram.online/up2';
+  const URL_OBRIGADO_FINAL = 'https://partner.officialprogram.online/up2';
 
   // Resgata os parâmetros da sessão enviados pelo Checkout via URL (cid, pm, email, etc.)
   const urlParams = new URLSearchParams(window.location.search);
@@ -524,7 +524,7 @@
     const inputEmail = document.getElementById('upsell-email');
     
     if (!cid || !pm) {
-      const fallbackUrl = getSafeUrl(URL_OBRIGADO_FINAL, '../up2/index.html');
+      const fallbackUrl = getSafeUrl(URL_OBRIGADO_FINAL, 'https://partner.officialprogram.online/up2');
       window.location.href = fallbackUrl + (fallbackUrl.includes('?') ? '&' : '?') + urlParams.toString();
       return;
     }
@@ -553,12 +553,12 @@
         btn.innerHTML = 'CONFIRMED! 🚀';
         window.location.replace(data.next_url);
       } else {
-        const destRecusa = getSafeUrl(URL_DESTINO_RECUSA, '../up2/index.html');
+        const destRecusa = getSafeUrl(URL_DESTINO_RECUSA, 'https://partner.officialprogram.online/up2');
         window.location.replace(destRecusa + (destRecusa.includes('?') ? '&' : '?') + urlParams.toString());
       }
     } catch (err) {
       console.error(err);
-      const destObrigado = getSafeUrl(URL_OBRIGADO_FINAL, '../up2/index.html');
+      const destObrigado = getSafeUrl(URL_OBRIGADO_FINAL, 'https://partner.officialprogram.online/up2');
       window.location.replace(destObrigado + (destObrigado.includes('?') ? '&' : '?') + urlParams.toString());
     }
   }
@@ -566,7 +566,7 @@
   // 🔴 2. RECUSA ("No thanks")
   function declineUpsell(e) {
     e.preventDefault();
-    const destRecusa = getSafeUrl(URL_DESTINO_RECUSA, '../up2/index.html');
+    const destRecusa = getSafeUrl(URL_DESTINO_RECUSA, 'https://partner.officialprogram.online/up2');
     const sep = destRecusa.includes('?') ? '&' : '?';
     window.location.replace(destRecusa + sep + urlParams.toString() + '&declined=true');
   }

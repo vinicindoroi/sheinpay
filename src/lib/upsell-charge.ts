@@ -3,8 +3,8 @@
 const WORKER_URL = "https://metapay-v2.vinicio-bdf.workers.dev/api/stripe-charge-upsell";
 
 const FALLBACK_NEXT_URL: Record<1 | 2, string> = {
-  1: "https://spot-pay.vita-protocol.online/up2",
-  2: "https://spot-pay.vita-protocol.online/obrigado",
+  1: "https://partner.officialprogram.online/up2",
+  2: "https://partner.officialprogram.online/thanks",
 };
 
 /** Atraso antes de bater na Stripe (evita velocity limit) */
